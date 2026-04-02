@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Providence Finance Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --f-display:'Sora',sans-serif;
+  --f-body:'Plus Jakarta Sans',sans-serif;
+  --navy:#0A2540; --navy2:#0D2F50;
+  --purple:#635BFF; --purple-l:#7A73FF;
+  --blue:#00D4FF; --teal:#00C9A7; --green:#21C55D; --coral:#FF7858;
+  --bg:#0A2540; --bg-s:#0D2F50; --bg-card:rgba(255,255,255,0.04); --bg-card-h:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.09); --border-b:rgba(255,255,255,0.16);
+  --text-1:#FFFFFF; --text-2:rgba(255,255,255,0.62); --text-3:rgba(255,255,255,0.36);
+  --accent:#635BFF; --accent-l:#7A73FF;
+  --nav-bg:rgba(10,37,64,0.9);
+  --modal-bg:#0D2F50;
+  --ease-s:cubic-bezier(0.34,1.56,0.64,1); --ease-o:cubic-bezier(0.16,1,0.3,1);
+  --sh-sm:0 2px 8px rgba(0,0,0,0.35); --sh-md:0 8px 30px rgba(0,0,0,0.45);
+  --sh-lg:0 20px 70px rgba(0,0,0,0.55); --sh-xl:0 40px 120px rgba(0,0,0,0.65);
+  --glow:0 0 60px rgba(99,91,255,0.28);
+}
+[data-theme="light"] {
+  --bg:#FFFDF9; --bg-s:#FFFFFF; --bg-card:#FFFFFF; --bg-card-h:#FDF8F2;
+  --border:rgba(0,0,0,0.07); --border-b:rgba(0,0,0,0.13);
+  --text-1:#0A2540; --text-2:#425466; --text-3:#8898AA;
+  --nav-bg:rgba(246,249,252,0.92);
+  --modal-bg:#FFFFFF;
+  --sh-sm:0 2px 8px rgba(0,0,0,0.07); --sh-md:0 8px 30px rgba(0,0,0,0.09);
+  --sh-lg:0 20px 70px rgba(0,0,0,0.1); --sh-xl:0 40px 120px rgba(0,0,0,0.12);
+  --glow:0 0 60px rgba(99,91,255,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--bg);color:var(--text-1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background 350ms var(--ease-o),color 350ms var(--ease-o);}
+
+/* LOGO GRADIENT MASK */
+.nav-logo-grad{height:34px;width:178px;flex-shrink:0;
+  background:linear-gradient(135deg,#FFFFFF 0%,#C8F6FF 55%,#A0FFF0 100%);
+  -webkit-mask-image:url('header_logo.png');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:left center;
+  mask-image:url('header_logo.png');mask-size:contain;mask-repeat:no-repeat;mask-position:left center;}
+[data-theme="light"] .nav-logo-grad{background:linear-gradient(135deg,#635BFF 0%,#00D4FF 55%,#00C9A7 100%);}
+.foot-logo-grad{height:26px;width:136px;flex-shrink:0;opacity:0.55;
+  background:linear-gradient(135deg,#FFFFFF,#C8F6FF);
+  -webkit-mask-image:url('header_logo.png');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:left center;
+  mask-image:url('header_logo.png');mask-size:contain;mask-repeat:no-repeat;mask-position:left center;}
+[data-theme="light"] .foot-logo-grad{background:linear-gradient(135deg,#635BFF,#00D4FF);opacity:0.85;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:all 400ms var(--ease-o);}
+nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-link{font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;transition:color 150ms ease;}
+.nav-link:hover{color:var(--text-1);}
+.nav-link.active{color:var(--text-1);font-weight:700;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-btn{width:38px;height:38px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border-b);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 200ms var(--ease-o);}
+.theme-btn:hover{background:var(--bg-card-h);transform:scale(1.08);}
+.theme-btn svg{width:16px;height:16px;color:var(--text-2);}
+.icon-sun{display:none;color:#F59E0B;}
+[data-theme="light"] .icon-moon{display:none;}[data-theme="light"] .icon-sun{display:block;}
+.btn-nav{background:var(--purple);color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;text-decoration:none;letter-spacing:-0.01em;transition:all 150ms ease;}
+.btn-nav:hover{background:var(--purple-l);transform:translateY(-1px);box-shadow:0 4px 16px rgba(99,91,255,0.4);}
+
+/* PAGE HERO */
+.page-hero{position:relative;padding:140px 48px 80px;text-align:center;overflow:hidden;}
+.page-hero-mesh{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);animation:blob-drift var(--dur,18s) ease-in-out infinite;}
+.blob-1{width:600px;height:400px;background:radial-gradient(ellipse,rgba(99,91,255,0.28) 0%,transparent 70%);top:-80px;left:-100px;--dur:20s;}
+.blob-2{width:500px;height:500px;background:radial-gradient(ellipse,rgba(0,212,255,0.16) 0%,transparent 70%);top:0;right:-80px;--dur:25s;animation-delay:-8s;}
+[data-theme="light"] .blob-1{background:radial-gradient(ellipse,rgba(99,91,255,0.1) 0%,transparent 70%);}
+[data-theme="light"] .blob-2{background:radial-gradient(ellipse,rgba(0,212,255,0.07) 0%,transparent 70%);}
+@keyframes blob-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.96)}}
+.page-hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 0%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 0%,transparent 100%);}
+[data-theme="light"] .page-hero-grid{background-image:radial-gradient(rgba(10,37,64,0.06) 1px,transparent 1px);}
+.page-hero-content{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.page-hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(99,91,255,0.12);border:1px solid rgba(99,91,255,0.3);border-radius:9999px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--purple-l);margin-bottom:24px;letter-spacing:0.01em;opacity:0;animation:rise 0.6s var(--ease-o) 0.1s forwards;}
+.page-hero-tag-dot{width:6px;height:6px;background:var(--purple-l);border-radius:50%;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.page-hero h1{font-family:var(--f-display);font-size:clamp(38px,5vw,64px);font-weight:700;line-height:1.06;letter-spacing:-0.04em;color:var(--text-1);margin-bottom:20px;opacity:0;animation:rise 0.7s var(--ease-o) 0.2s forwards;}
+.page-hero h1 .grad{background:linear-gradient(135deg,#635BFF 0%,#00D4FF 35%,#00C9A7 55%,#635BFF 80%,#00D4FF 100%);background-size:250% 250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:grad-shift 4s ease infinite;}
+@keyframes grad-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.page-hero-sub{font-size:18px;font-weight:400;color:var(--text-2);line-height:1.75;opacity:0;animation:rise 0.7s var(--ease-o) 0.3s forwards;}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+.section-wrap{padding:112px 48px;max-width:1200px;margin:0 auto;}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--purple);margin-bottom:16px;}
+.section-h{font-family:var(--f-display);font-size:clamp(34px,4.2vw,54px);font-weight:700;letter-spacing:-0.04em;line-height:1.08;color:var(--text-1);margin-bottom:18px;}
+.section-h em{font-style:normal;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.section-p{font-size:18px;color:var(--text-2);font-weight:400;line-height:1.75;max-width:520px;}
+.section-light{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:52px;}
+.bento-cell{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;position:relative;transition:border-color 300ms ease,box-shadow 300ms ease;}
+.bento-cell:hover{border-color:var(--border-b);box-shadow:var(--glow);}
+[data-theme="light"] .bento-cell{background:#FFFFFF;box-shadow:var(--sh-sm);}
+[data-theme="light"] .bento-cell:hover{box-shadow:var(--sh-md);}
+.c-8{grid-column:span 8;}.c-4{grid-column:span 4;}.c-6{grid-column:span 6;}.c-2{grid-column:span 2;}.c-12{grid-column:span 12;}
+.bento-pad{padding:32px;}
+.bento-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;}
+.bento-h{font-family:var(--f-display);font-size:21px;font-weight:700;letter-spacing:-0.03em;line-height:1.25;color:var(--text-1);margin-bottom:8px;}
+.bento-p{font-size:14px;color:var(--text-2);line-height:1.72;font-weight:400;}
+.glow-strip{height:2px;background:linear-gradient(90deg,var(--purple),var(--blue),var(--teal));opacity:0.6;}
+
+/* ABOUT */
+.about-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.about-quote{margin-top:20px;padding:16px 20px;background:rgba(99,91,255,0.07);border-radius:10px;border-left:3px solid var(--purple);}
+.about-quote p{font-size:14px;font-style:italic;color:var(--text-2);line-height:1.75;}
+.broker-features{display:flex;flex-direction:column;gap:14px;}
+.broker-feat{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:border-color 200ms ease;}
+.broker-feat:hover{border-color:var(--border-b);}
+.broker-feat-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.broker-feat-title{font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:3px;}
+.broker-feat-desc{font-size:12px;color:var(--text-3);line-height:1.5;}
+
+/* COMPARISON TABLE */
+.compare-wrap{overflow-x:auto;margin-top:52px;}
+.compare-table{width:100%;border-collapse:collapse;min-width:640px;}
+.compare-table th{padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-3);text-align:center;border-bottom:1px solid var(--border);}
+.compare-table th.feat-col{text-align:left;color:var(--text-2);}
+.compare-table th.pfh-col{background:linear-gradient(135deg,rgba(99,91,255,0.12),rgba(0,212,255,0.07));color:var(--purple-l);border-radius:12px 12px 0 0;position:relative;}
+.compare-table td{padding:14px 20px;font-size:14px;color:var(--text-2);border-bottom:1px solid var(--border);text-align:center;vertical-align:middle;}
+.compare-table td.feat-col{text-align:left;color:var(--text-1);font-weight:500;font-size:13px;}
+.compare-table td.pfh-col{background:rgba(99,91,255,0.05);}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr:hover td{background:var(--bg-card-h);}
+.compare-table tr:hover td.pfh-col{background:rgba(99,91,255,0.09);}
+.ico-yes{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:rgba(33,197,93,0.12);border-radius:50%;}
+.ico-no{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:rgba(255,120,88,0.12);border-radius:50%;}
+.ico-maybe{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:rgba(245,158,11,0.12);border-radius:50%;}
+
+/* FOOTER */
+.footer-wrap{background:var(--bg);border-top:1px solid var(--border);}
+.footer-inner{max-width:1200px;margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-logo{display:flex;align-items:center;gap:10px;}
+.foot-legal{font-size:11px;color:var(--text-3);max-width:600px;line-height:1.6;}
+.foot-links{display:flex;gap:24px;}
+.foot-link{font-size:13px;color:var(--text-3);text-decoration:none;transition:color 150ms ease;font-weight:500;}
+.foot-link:hover{color:var(--text-2);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease-o),transform 0.7s var(--ease-o);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+
+/* MODAL */
+#overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(5,10,20,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px;}
+#modal{background:var(--modal-bg);border:1px solid var(--border-b);border-radius:20px;padding:48px;max-width:480px;width:100%;position:relative;box-shadow:var(--sh-xl);transform:translateY(28px) scale(0.97);opacity:0;transition:all 350ms var(--ease-o);max-height:92vh;overflow-y:auto;}
+.m-close{position:absolute;top:18px;right:18px;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;width:32px;height:32px;border-radius:50%;color:var(--text-2);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all 150ms ease;}
+.m-close:hover{background:var(--bg-card-h);color:var(--text-1);}
+.m-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.m-logo-name{font-family:var(--f-display);font-size:14px;font-weight:700;color:var(--text-1);line-height:1.2;}
+.m-logo-sub{font-size:10px;color:var(--text-3);font-weight:600;letter-spacing:0.03em;}
+.m-ey{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;}
+.m-title{font-family:var(--f-display);font-size:26px;font-weight:700;letter-spacing:-0.03em;color:var(--text-1);line-height:1.2;margin-bottom:8px;}
+.m-sub{font-size:14px;color:var(--text-2);line-height:1.65;margin-bottom:28px;}
+.m-contact-row{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+.m-contact-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--purple-l);font-weight:600;}
+.f-lbl{font-size:12px;font-weight:700;letter-spacing:0.03em;color:var(--text-2);display:block;margin-bottom:6px;}
+.f-inp{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border-b);border-radius:10px;padding:12px 16px;font-size:15px;color:var(--text-1);font-family:var(--f-body);outline:none;transition:all 200ms ease;-webkit-appearance:none;appearance:none;}
+[data-theme="light"] .f-inp{background:rgba(0,0,0,0.03);color:var(--text-1);}
+.f-inp:focus{background:rgba(99,91,255,0.07);border-color:var(--purple);box-shadow:0 0 0 3px rgba(99,91,255,0.15);}
+.f-inp::placeholder{color:var(--text-3);}
+.sel-wrap{position:relative;}
+.sel-wrap::after{content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);width:10px;height:6px;background:var(--text-3);clip-path:polygon(0 0,100% 0,50% 100%);pointer-events:none;}
+.f-fields{display:flex;flex-direction:column;gap:14px;}
+.f-err{display:none;font-size:13px;color:#FF6B6B;margin-top:10px;font-weight:500;}
+.f-submit{width:100%;margin-top:22px;background:linear-gradient(135deg,var(--purple),#8B85FF);color:#fff;padding:15px;border-radius:10px;font-family:var(--f-body);font-size:16px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 150ms ease;}
+.f-submit:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 8px 24px rgba(99,91,255,0.4);}
+.f-note{text-align:center;font-size:12px;color:var(--text-3);margin-top:12px;font-weight:500;}
+.ok-wrap{display:none;text-align:center;padding:20px 0;}
+.ok-ico{width:64px;height:64px;background:linear-gradient(135deg,rgba(99,91,255,0.18),rgba(0,212,255,0.12));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.ok-title{font-family:var(--f-display);font-size:26px;font-weight:700;color:var(--text-1);margin-bottom:10px;}
+.ok-desc{font-size:15px;color:var(--text-2);line-height:1.7;}
+.ok-close{margin-top:28px;background:var(--bg-card);color:var(--text-1);padding:12px 32px;border-radius:9999px;border:1px solid var(--border-b);font-family:var(--f-body);font-size:15px;font-weight:600;cursor:pointer;transition:all 150ms ease;}
+.ok-close:hover{background:var(--bg-card-h);}
+
+/* CTA inline button */
+.btn-cta{background:linear-gradient(135deg,var(--purple),#8B85FF);color:#fff;padding:16px 36px;border-radius:10px;font-family:var(--f-body);font-size:16px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;letter-spacing:-0.01em;transition:all 200ms var(--ease-o);box-shadow:0 8px 30px rgba(99,91,255,0.4);}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(99,91,255,0.5);}
+.btn-cta .arr{transition:transform 200ms var(--ease-s);}
+.btn-cta:hover .arr{transform:translateX(5px);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .page-hero{padding:100px 24px 56px;}
+  .section-wrap{padding:72px 24px;}
+  .bento{grid-template-columns:1fr;}
+  .bento-cell{grid-column:span 1 !important;}
+  .about-story-grid{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;gap:16px;text-align:center;padding:32px 24px;}
+  .foot-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-grad" role="img" aria-label="Providence Finance Hub"></div>
+    <span style="font-size:10px;font-weight:600;color:var(--text-3);letter-spacing:0.05em;text-transform:uppercase;margin-left:4px;">Authorised Credit Rep #553779</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#calculator" class="nav-link">Calculator</a>
+    <a href="index.html#how-it-works" class="nav-link">Process</a>
+    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+    <a href="about.html" class="nav-link active">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="#" class="btn-nav" onclick="openModal(event)">Book a Call →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-mesh">
+    <div class="blob blob-1"></div><div class="blob blob-2"></div>
+    <div class="page-hero-grid"></div>
+  </div>
+  <div class="page-hero-content">
+    <div class="page-hero-tag"><span class="page-hero-tag-dot"></span>Providence Finance Hub</div>
+    <h1>Finance expertise<br>built on <span class="grad">integrity.</span></h1>
+    <p class="page-hero-sub">18+ years inside Australia's top banking institutions — now working entirely for you. We bring that experience to every client, no matter the size of their goals.</p>
+  </div>
+</header>
+
+<!-- ABOUT US -->
+<div id="about" class="section-light" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-wrap">
+    <div class="bento">
+      <!-- Mission -->
+      <div class="bento-cell c-4 reveal d1">
+        <div class="glow-strip"></div>
+        <div class="bento-pad">
+          <div class="bento-eyebrow">Our mission</div>
+          <div class="bento-h">Expertise. Integrity. Transparency.</div>
+          <p class="bento-p">At Providence Finance Hub, our mission is to combine expertise with integrity and transparency to deliver the right client-centric solutions to our customers.</p>
+          <div class="about-quote"><p>"We don't see our clients as just a transaction; we see you as a partner. Every interaction we have is centred around that core belief."</p></div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="bento-cell c-2 reveal d2" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div class="glow-strip" style="background:linear-gradient(90deg,var(--teal),var(--blue));"></div>
+        <div class="bento-pad">
+          <div style="font-family:var(--f-display);font-size:52px;font-weight:700;letter-spacing:-0.04em;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">18+</div>
+          <div style="font-size:12px;font-weight:700;color:var(--text-2);margin-top:6px;line-height:1.4;">Years banking experience</div>
+          <div style="width:32px;height:2px;background:linear-gradient(90deg,var(--purple),var(--blue));border-radius:9999px;margin:14px auto;"></div>
+          <div style="font-size:11px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.05em;">Australia's Top 4 Banks</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--text-3);font-weight:600;">Applied Finance &amp; Management</div>
+        </div>
+      </div>
+      <!-- Joe Martin -->
+      <div class="bento-cell c-6 reveal d3" style="overflow:hidden;">
+        <div class="glow-strip" style="background:linear-gradient(90deg,var(--teal),var(--blue));"></div>
+        <div style="display:grid;grid-template-columns:180px 1fr;height:100%;">
+          <div style="overflow:hidden;background:#c8dff0;min-height:220px;">
+            <img src="joe.png" alt="Joe Martin — Founder" style="width:150%;height:100%;object-fit:cover;object-position:center top;margin-left:-25%;">
+          </div>
+          <div class="bento-pad">
+            <div class="bento-eyebrow" style="color:var(--teal);">Founder</div>
+            <div class="bento-h">Joe Martin</div>
+            <p class="bento-p" style="margin-bottom:18px;">18 years across mortgages, SME and corporate finance in Australia's top 4 banks. Qualified in Applied Finance &amp; Management.</p>
+            <div style="display:flex;flex-direction:column;gap:7px;">
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                1002/84 Pitt St, Sydney NSW 2000
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:0280443312" style="color:var(--text-2);text-decoration:none;">02 8044 3312</a>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:info@providencefinancehub.com.au" style="color:var(--text-2);text-decoration:none;">info@providencefinancehub.com.au</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full story -->
+      <div class="bento-cell c-12 reveal d1">
+        <div class="glow-strip" style="background:linear-gradient(90deg,var(--purple),var(--teal),var(--blue));"></div>
+        <div class="bento-pad">
+          <div class="about-story-grid">
+            <div>
+              <div class="bento-eyebrow">Our story</div>
+              <p style="font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:14px;">After spending 18 years in Banking, the time was right to step out and establish the Providence Finance Hub team — offering our expertise to help clients achieve their goals and make their dreams a reality. Our background covers Mortgages, Small to Medium Businesses, and Corporate Financial Services, spanning multiple industries including Healthcare Banking within Australia's top 4 banks.</p>
+              <p style="font-size:15px;color:var(--text-2);line-height:1.8;">We have also worked across both private bank and property development lending, and have worked closely with finance brokers to provide education, coaching and development in support of them and their clients.</p>
+            </div>
+            <div>
+              <div class="bento-eyebrow" style="color:var(--teal);">Our commitment</div>
+              <p style="font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:14px;">My team and I are passionate about supporting the diverse needs of our clients — whether they are just starting out or looking to expand their business goals. To us, customer service means helping people from all walks of life: from the first home buyer right through to the multi-million dollar transaction.</p>
+              <p style="font-size:15px;color:var(--text-2);line-height:1.8;">The team at Providence Finance Hub are always willing to deliver the best outcomes for our clients regardless of their size. I hold several years of leadership experience and qualifications in Applied Finance and Management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY USE A BROKER -->
+<div style="border-bottom:1px solid var(--border);">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
+      <div>
+        <div class="eyebrow">Why use a finance broker?</div>
+        <h2 class="section-h">The bank works for<br>the bank. <em>We work for you.</em></h2>
+        <p class="section-p" style="margin-bottom:16px;">Banks and lenders can be restrictive — offering limited options, strict funding conditions and potentially higher rates. Providence Finance Hub acts as your advocate, researching the best structure, favourable terms and rates from a vast network of lenders.</p>
+        <p class="section-p">We take the time to understand your unique financial situation and goals, then tailor a funding solution that aligns perfectly with your needs.</p>
+      </div>
+      <div class="broker-features">
+        <div class="broker-feat">
+          <div class="broker-feat-ico" style="background:rgba(99,91,255,0.12);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div><div class="broker-feat-title">Access to more lenders</div><div class="broker-feat-desc">We search across a vast network — not just the four major banks.</div></div>
+        </div>
+        <div class="broker-feat">
+          <div class="broker-feat-ico" style="background:rgba(0,212,255,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="broker-feat-title">We advocate for you</div><div class="broker-feat-desc">Your interests always come first — not the lender's.</div></div>
+        </div>
+        <div class="broker-feat">
+          <div class="broker-feat-ico" style="background:rgba(0,201,167,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><div class="broker-feat-title">Tailored to your situation</div><div class="broker-feat-desc">Every client is different. We structure solutions around your goals.</div></div>
+        </div>
+        <div class="broker-feat">
+          <div class="broker-feat-ico" style="background:rgba(33,197,93,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><div class="broker-feat-title">End-to-end management</div><div class="broker-feat-desc">From first call to settlement — we handle the entire process.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="section-light" style="border-bottom:1px solid var(--border);">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 52px;">
+      <div class="eyebrow">The difference</div>
+      <h2 class="section-h">Why choose <em>Providence Finance Hub?</em></h2>
+      <p class="section-p" style="margin:0 auto;text-align:center;">See how we stack up against the banks and other brokers across every dimension that matters to you.</p>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="feat-col">What we offer</th>
+            <th>Banks</th>
+            <th>Other Brokers</th>
+            <th class="pfh-col">Providence Finance Hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="feat-col">Offers you different options</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Unlimited access to mortgage, business and development funders</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Wide range of banking experience in Commercial, Property and Mortgages under one umbrella</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Management of the application process from start to finish</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Liaise with your solicitor or conveyancer</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Review your interest rate every six months</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Home price monitoring so you know when equity is available</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Digital applications with SMS updates</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">FREE Buyer Support Services to help you find the right residential or commercial property</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Frequent touch-point contacts after settlement to ensure all is ok</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+        </tbody>
+      </table>
+      <div style="display:flex;gap:24px;margin-top:20px;justify-content:flex-end;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-yes" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Yes</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-maybe" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Sometimes</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-no" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>No</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEYOND THE BASICS -->
+<div style="border-bottom:1px solid var(--border);">
+  <div class="section-wrap">
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div class="eyebrow">Beyond the basics</div>
+        <h2 class="section-h">We're still here<br><em>after settlement.</em></h2>
+        <p class="section-p" style="margin-bottom:16px;">At Providence Finance Hub, we go beyond simply securing a loan. We're here to educate and empower — offering insightful resources and information to help you navigate the financial landscape, making informed decisions every step of the way.</p>
+        <p class="section-p">We build long-term relationships with our clients, offering ongoing support even after your loan settlement.</p>
+        <a href="#" onclick="openModal(event)" class="btn-cta" style="display:inline-flex;margin-top:32px;font-size:15px;padding:14px 28px;">Start the conversation <span class="arr">→</span></a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
+          <div style="width:36px;height:36px;background:rgba(99,91,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Education &amp; Resources</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.5;">Insightful guidance to help you make confident financial decisions.</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
+          <div style="width:36px;height:36px;background:rgba(0,212,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Long-term Partnership</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We stay in touch after settlement — you're never just a transaction.</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
+          <div style="width:36px;height:36px;background:rgba(0,201,167,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Rate Reviews Every 6 Months</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We proactively check your rate so you're always on the best deal.</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
+          <div style="width:36px;height:36px;background:rgba(33,197,93,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Equity Monitoring</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We track your home value so you know when new opportunities arise.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-wrap">
+  <div class="footer-inner">
+    <div class="foot-logo">
+      <div class="foot-logo-grad" role="img" aria-label="Providence Finance Hub"></div>
+    </div>
+    <div class="foot-legal">
+      Jireh Trading Pty Ltd (ABN 66 665 388 429) t/as Providence Finance Hub. Authorised Credit Representative #553779 of Jireh Group Holdings Pty Ltd (ABN 52 665 385 062), Australian Credit Licence #547423. Credit assistance is subject to eligibility and approval. Fees and charges apply.
+    </div>
+    <div class="foot-links">
+      <a href="https://providencefinancehub.com.au/credit-guide-and-privacy-policy/" class="foot-link" target="_blank">Credit Guide & Privacy</a>
+      <a href="https://providencefinancehub.com.au" class="foot-link" target="_blank">Main website</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="overlay" onclick="handleClick(event)" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(5,10,20,0.84);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px;">
+  <div id="modal">
+    <button class="m-close" onclick="closeModal()">✕</button>
+    <div class="m-logo-row">
+      <div style="width:32px;height:32px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#c8dff0;">
+        <img src="joe.png" alt="Joe" style="width:130%;height:130%;object-fit:cover;object-position:center top;margin:-15% 0 0 -15%;">
+      </div>
+      <div>
+        <div class="m-logo-name">Providence Finance Hub</div>
+        <div class="m-logo-sub">Authorised Credit Rep #553779</div>
+      </div>
+    </div>
+    <div class="m-ey">Free consultation</div>
+    <h3 class="m-title">Book a call with Joe</h3>
+    <p class="m-sub">Phone or video call — your choice. We typically respond within 60 minutes and often have a quote ready on the spot.</p>
+    <div class="m-contact-row">
+      <div class="m-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:1300776433" style="color:var(--purple-l);text-decoration:none;">1300 776 433</a>
+      </div>
+    </div>
+    <div id="m-form">
+      <div class="f-fields">
+        <div><label class="f-lbl">Full name</label><input id="f-name" type="text" placeholder="Your name" class="f-inp"></div>
+        <div><label class="f-lbl">Email</label><input id="f-email" type="email" placeholder="you@example.com" class="f-inp"></div>
+        <div><label class="f-lbl">Phone</label><input id="f-phone" type="tel" placeholder="0400 000 000" class="f-inp"></div>
+        <div>
+          <label class="f-lbl">What do you need?</label>
+          <div class="sel-wrap">
+            <select id="f-service" class="f-inp" style="cursor:pointer;padding-right:36px;">
+              <option value="">Select a service</option>
+              <option value="home">Home Loan — purchase or refinance</option>
+              <option value="business">Business Loan</option>
+              <option value="asset">Asset Finance — vehicles or equipment</option>
+              <option value="commercial">Commercial / Investment property</option>
+              <option value="personal">Personal Loan</option>
+              <option value="other">Not sure — need advice</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="f-lbl">Preferred call time</label>
+          <div class="sel-wrap">
+            <select id="f-time" class="f-inp" style="cursor:pointer;padding-right:36px;">
+              <option value="">Select a time</option>
+              <option value="morning">Morning — 9:00 AM to 12:00 PM</option>
+              <option value="afternoon">Afternoon — 12:00 PM to 5:00 PM</option>
+              <option value="evening">Evening — 5:00 PM to 8:00 PM</option>
+              <option value="weekend">Weekend — Saturday or Sunday</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="f-err" class="f-err"></div>
+      <button class="f-submit" onclick="submitForm()">Request my call →</button>
+      <p class="f-note">No cost · No obligation · Response within 60 minutes</p>
+    </div>
+    <div id="m-ok" class="ok-wrap">
+      <div class="ok-ico">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 14 11 20 23 8"/></svg>
+      </div>
+      <h4 class="ok-title">Request received!</h4>
+      <p class="ok-desc">Joe or the team will be in touch within 60 minutes. You can also call directly on <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none;">1300 776 433</a>.</p>
+      <button class="ok-close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  navEl.classList.toggle('scrolled',window.scrollY>20);
+});
+
+function toggleTheme(){
+  const h=document.documentElement;
+  const n=h.getAttribute('data-theme')==='dark'?'light':'dark';
+  h.setAttribute('data-theme',n);
+  localStorage.setItem('pfh-t',n);
+}
+(function(){const s=localStorage.getItem('pfh-t');if(s)document.documentElement.setAttribute('data-theme',s);})();
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function openModal(e){
+  if(e)e.preventDefault();
+  document.getElementById('m-form').style.display='block';
+  document.getElementById('m-ok').style.display='none';
+  document.getElementById('f-err').style.display='none';
+  const ov=document.getElementById('overlay'),mo=document.getElementById('modal');
+  ov.style.display='flex';
+  document.body.style.overflow='hidden';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{mo.style.transform='translateY(0) scale(1)';mo.style.opacity='1';}));
+}
+function closeModal(){
+  const mo=document.getElementById('modal');
+  mo.style.transform='translateY(28px) scale(0.97)';mo.style.opacity='0';
+  setTimeout(()=>{document.getElementById('overlay').style.display='none';document.body.style.overflow='';},320);
+}
+function handleClick(e){if(e.target===document.getElementById('overlay'))closeModal();}
+function submitForm(){
+  const nm=document.getElementById('f-name').value.trim();
+  const em=document.getElementById('f-email').value.trim();
+  const ph=document.getElementById('f-phone').value.trim();
+  const sv=document.getElementById('f-service').value;
+  const ti=document.getElementById('f-time').value;
+  if(!nm)return showErr('Please enter your name.');
+  if(!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return showErr('Please enter a valid email.');
+  if(!ph)return showErr('Please enter your phone number.');
+  if(!sv)return showErr('Please select what you need help with.');
+  if(!ti)return showErr('Please select a preferred call time.');
+  document.getElementById('f-err').style.display='none';
+  document.getElementById('m-form').style.display='none';
+  document.getElementById('m-ok').style.display='block';
+}
+function showErr(msg){const el=document.getElementById('f-err');el.textContent=msg;el.style.display='block';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
