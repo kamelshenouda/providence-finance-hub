@@ -26,7 +26,7 @@
   --glow:0 0 60px rgba(99,91,255,0.28);
 }
 [data-theme="light"] {
-  --bg:#F6F9FC; --bg-s:#FFFFFF; --bg-card:#FFFFFF; --bg-card-h:#F6F9FC;
+  --bg:#FFFDF9; --bg-s:#FFFFFF; --bg-card:#FFFFFF; --bg-card-h:#FDF8F2;
   --border:rgba(0,0,0,0.07); --border-b:rgba(0,0,0,0.13);
   --text-1:#0A2540; --text-2:#425466; --text-3:#8898AA;
   --nav-bg:rgba(246,249,252,0.92);
@@ -289,6 +289,33 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
 .ok-close{margin-top:28px;background:var(--bg-card);color:var(--text-1);padding:12px 32px;border-radius:9999px;border:1px solid var(--border-b);font-family:var(--f-body);font-size:15px;font-weight:600;cursor:pointer;transition:all 150ms ease;}
 .ok-close:hover{background:var(--bg-card-h);}
 
+/* HERO FACE STACK */
+.hero-faces{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:28px;opacity:0;animation:rise 0.7s var(--ease-o) 0.45s forwards;}
+.face-stack{display:flex;align-items:center;}
+.face-av{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);margin-left:-10px;flex-shrink:0;}
+.face-av:first-child{margin-left:0;}
+.face-label{font-size:14px;color:var(--text-2);font-weight:500;}
+.face-label strong{color:var(--text-1);font-weight:700;}
+
+/* WHO WE HELP */
+.who-wrap{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.who-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 300ms var(--ease-o);}
+[data-theme="light"] .who-card{box-shadow:var(--sh-sm);}
+.who-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
+.who-img-wrap{position:relative;height:220px;overflow:hidden;}
+.who-img{width:100%;height:100%;object-fit:cover;transition:transform 500ms var(--ease-o);}
+.who-card:hover .who-img{transform:scale(1.05);}
+.who-tag-pill{position:absolute;bottom:14px;left:14px;background:rgba(99,91,255,0.88);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:9999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.who-body{padding:24px;}
+.who-name{font-family:var(--f-display);font-size:18px;font-weight:700;color:var(--text-1);margin-bottom:8px;letter-spacing:-0.02em;}
+.who-desc{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:16px;}
+.who-cta{font-size:14px;font-weight:700;color:var(--purple-l);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 200ms var(--ease-s);}
+.who-cta:hover{gap:10px;}
+
+/* PHOTO AVATARS IN TESTIMONIALS */
+img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 20px;}
@@ -302,6 +329,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
   .bento-cell{grid-column:span 1 !important;}
   .calc-left-b,.calc-right-b{padding:26px 22px;}
   .calc-left-b{border-right:none;border-bottom:1px solid var(--border);}
+  .who-grid{grid-template-columns:1fr;}
   .steps-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
   .cta-wrap{padding:80px 24px;}
@@ -355,6 +383,16 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
         Loan calculator
       </a>
+    </div>
+    <div class="hero-faces">
+      <div class="face-stack">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&q=80" class="face-av" alt="Client">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80" class="face-av" alt="Client">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80" class="face-av" alt="Client">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&q=80" class="face-av" alt="Client">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&q=80" class="face-av" alt="Client">
+      </div>
+      <div class="face-label"><strong>200+</strong> Australians helped find the right loan</div>
     </div>
     <p class="hero-contact">Call us on <a href="tel:1300776433">1300 776 433</a> &nbsp;·&nbsp; <a href="mailto:info@providencefinancehub.com.au">info@providencefinancehub.com.au</a></p>
     <div class="hero-stats">
@@ -492,6 +530,52 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
   </div>
 </div>
 
+<!-- WHO WE HELP -->
+<div class="who-wrap">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 56px;">
+      <div class="eyebrow">Who we help</div>
+      <h2 class="section-h">Finance for <em>real life.</em></h2>
+      <p class="section-p" style="margin:0 auto;text-align:center;">Whether you're buying your first home, growing a business, or getting equipment on the road — we've helped people just like you.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal d1">
+        <div class="who-img-wrap">
+          <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=700&h=440&fit=crop&q=80" alt="Family buying a home" class="who-img">
+          <div class="who-tag-pill">Home Loans</div>
+        </div>
+        <div class="who-body">
+          <div class="who-name">Home buyers & refinancers</div>
+          <p class="who-desc">First home, upgrade, or refinance — we find the right lender for your situation, including if the banks have said no before.</p>
+          <a href="#" onclick="openModal(event)" class="who-cta">Get started →</a>
+        </div>
+      </div>
+      <div class="who-card reveal d2">
+        <div class="who-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=440&fit=crop&q=80" alt="Business owner" class="who-img">
+          <div class="who-tag-pill" style="background:rgba(0,180,220,0.9);">Business Loans</div>
+        </div>
+        <div class="who-body">
+          <div class="who-name">Business owners</div>
+          <p class="who-desc">Need working capital, equipment, or commercial property? We move fast and understand how business cash flow really works.</p>
+          <a href="#" onclick="openModal(event)" class="who-cta">Get started →</a>
+        </div>
+      </div>
+      <div class="who-card reveal d3">
+        <div class="who-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&h=440&fit=crop&q=80" alt="Self-employed tradesperson" class="who-img">
+          <div class="who-tag-pill" style="background:rgba(0,180,155,0.9);">Self-Employed</div>
+        </div>
+        <div class="who-body">
+          <div class="who-name">Self-employed & contractors</div>
+          <p class="who-desc">Irregular income shouldn't mean a closed door. We specialise in self-employed applications and know exactly how to make them work.</p>
+          <a href="#" onclick="openModal(event)" class="who-cta">Get started →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CALCULATOR -->
 <div id="calculator">
   <div class="section-wrap">
@@ -550,7 +634,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
           </div>
           <div style="margin-top:24px;background:rgba(0,201,167,0.07);border:1px solid rgba(0,201,167,0.2);border-radius:12px;padding:18px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-              <div style="width:40px;height:40px;background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--f-display);font-size:16px;font-weight:700;color:#fff;">J</div>
+              <!-- Replace this src with Joe's real photo -->
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&q=80" alt="Joe — Finance Broker" style="width:40px;height:40px;border-radius:10px;object-fit:cover;flex-shrink:0;border:2px solid rgba(0,201,167,0.4);">
               <div>
                 <div style="font-size:13px;font-weight:700;color:var(--text-1);">Joe</div>
                 <div style="font-size:11px;color:var(--teal);font-weight:600;">Finance & Mortgage Broker</div>
@@ -698,8 +783,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
         <div class="testi-qm">"</div>
         <p class="testi-body">Just finished my refinance with Joe & Providence Finance Hub for my home loan. He got us the best offer. Joe always listens to your needs and any questions you have. The whole process went easy and smooth. Joe went beyond our expectations. Highly recommend for their excellent and transparent services.</p>
         <div class="testi-foot">
-          <div class="testi-av av-1">JR</div>
-          <div><div class="testi-name">Home loan refinance</div><div class="testi-role">Providence Finance Hub client</div></div>
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&q=80" class="testi-av" alt="J.R." style="width:40px;height:40px;border-radius:50%;">
+          <div><div class="testi-name">J.R.</div><div class="testi-role">Home loan refinance</div></div>
         </div>
       </div>
       <div class="testi-card reveal d2">
@@ -713,8 +798,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
         <div class="testi-qm">"</div>
         <p class="testi-body">Recently had the pleasure of working with Providence Finance Hub for a business loan. The process was remarkably fast and the team, especially Joe, provided exceptional service. Joe's insightful financial advice helped me make informed decisions, and he ensured the loan was secured promptly.</p>
         <div class="testi-foot">
-          <div class="testi-av av-2">BC</div>
-          <div><div class="testi-name">Business loan client</div><div class="testi-role">Providence Finance Hub client</div></div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&q=80" class="testi-av" alt="B.C." style="width:40px;height:40px;border-radius:50%;">
+          <div><div class="testi-name">B.C.</div><div class="testi-role">Business loan client</div></div>
         </div>
       </div>
       <div class="testi-card reveal d3">
@@ -728,8 +813,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
         <div class="testi-qm">"</div>
         <p class="testi-body">Thank you so much for your time and huge effort from you and the Providence Finance Hub team. I am truly amazed and grateful to have been able to get the best possible option. I am thankful for the connection that brought us to you. Just another big THANK YOU!</p>
         <div class="testi-foot">
-          <div class="testi-av av-3">SM</div>
-          <div><div class="testi-name">S. Masudome</div><div class="testi-role">Providence Finance Hub client</div></div>
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80" class="testi-av" alt="S. Masudome" style="width:40px;height:40px;border-radius:50%;">
+          <div><div class="testi-name">S. Masudome</div><div class="testi-role">Home loan client</div></div>
         </div>
       </div>
     </div>
@@ -746,8 +831,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
           </div>
           <p class="testi-body" style="margin-bottom:16px;">"Providence Finance Hub facilitated our second property mortgage seamlessly. Their expertise and personalised service made the process stress-free. From initial consultation to finalising terms, they demonstrated exceptional knowledge and dedication. Communication was prompt and clear, ensuring we were informed at every step. Their commitment to finding the best financial solution tailored to our needs was evident throughout. They surpassed our expectations."</p>
           <div class="testi-foot">
-            <div class="testi-av av-4">SP</div>
-            <div><div class="testi-name">Investment property purchase</div><div class="testi-role">Providence Finance Hub client</div></div>
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&q=80" class="testi-av" alt="S.P." style="width:40px;height:40px;border-radius:50%;">
+            <div><div class="testi-name">S.P.</div><div class="testi-role">Investment property purchase</div></div>
           </div>
         </div>
         <div style="text-align:center;flex-shrink:0;padding:24px;background:rgba(99,91,255,0.07);border-radius:16px;border:1px solid rgba(99,91,255,0.15);">
