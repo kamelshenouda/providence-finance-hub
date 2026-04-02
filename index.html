@@ -289,6 +289,15 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
 .ok-close{margin-top:28px;background:var(--bg-card);color:var(--text-1);padding:12px 32px;border-radius:9999px;border:1px solid var(--border-b);font-family:var(--f-body);font-size:15px;font-weight:600;cursor:pointer;transition:all 150ms ease;}
 .ok-close:hover{background:var(--bg-card-h);}
 
+/* CONCERNS */
+.concerns-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.concern-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 300ms var(--ease-o);}
+[data-theme="light"] .concern-card{background:#fff;box-shadow:var(--sh-sm);}
+.concern-card:hover{border-color:var(--border-b);box-shadow:var(--sh-md);}
+.concern-ico{width:44px;height:44px;border-radius:12px;background:var(--bg-card-h);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.concern-q{font-family:var(--f-display);font-size:16px;font-weight:700;color:var(--text-1);margin-bottom:10px;line-height:1.35;letter-spacing:-0.02em;}
+.concern-a{font-size:14px;color:var(--text-2);line-height:1.75;}
+
 /* HERO FACE STACK */
 .hero-faces{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:28px;opacity:0;animation:rise 0.7s var(--ease-o) 0.45s forwards;}
 .face-stack{display:flex;align-items:center;}
@@ -330,6 +339,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   .calc-left-b,.calc-right-b{padding:26px 22px;}
   .calc-left-b{border-right:none;border-bottom:1px solid var(--border);}
   .who-grid{grid-template-columns:1fr;}
+  .concerns-grid{grid-template-columns:1fr;}
   .steps-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
   .cta-wrap{padding:80px 24px;}
@@ -374,11 +384,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <div class="hero-grid"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag"><span class="hero-tag-dot"></span>20+ Years of Australian Banking Experience</div>
-    <h1>Finance solutions<br>built around <span class="grad">your goals.</span></h1>
-    <p class="hero-sub">Business loans, asset finance, and home loans — tailored by an expert who takes the time to understand your situation. Specialising in self-employed clients.</p>
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Your broker. Not the bank's.</div>
+    <h1>Getting a loan shouldn't feel<br>like <span class="grad">fighting a system.</span></h1>
+    <p class="hero-sub">Joe has 20+ years inside Australian banking — and left to work for you instead. Business loans, asset finance, home loans. Especially for the self-employed.</p>
     <div class="hero-actions">
-      <a href="#" class="btn-cta" onclick="openModal(event)">Book a Phone / Video Call <span class="arr">→</span></a>
+      <a href="#" class="btn-cta" onclick="openModal(event)">Talk to Joe — it's free <span class="arr">→</span></a>
       <a href="#calculator" class="btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
         Loan calculator
@@ -634,8 +644,9 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
           </div>
           <div style="margin-top:24px;background:rgba(0,201,167,0.07);border:1px solid rgba(0,201,167,0.2);border-radius:12px;padding:18px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-              <!-- Replace this src with Joe's real photo -->
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&q=80" alt="Joe — Finance Broker" style="width:40px;height:40px;border-radius:10px;object-fit:cover;flex-shrink:0;border:2px solid rgba(0,201,167,0.4);">
+              <div style="width:40px;height:40px;border-radius:10px;flex-shrink:0;overflow:hidden;border:2px solid rgba(0,201,167,0.4);background:#c8dff0;">
+                <img src="joe.png" alt="Joe — Finance Broker" style="width:130%;height:130%;object-fit:cover;object-position:center top;margin:-15% 0 0 -15%;">
+              </div>
               <div>
                 <div style="font-size:13px;font-weight:700;color:var(--text-1);">Joe</div>
                 <div style="font-size:11px;color:var(--teal);font-weight:600;">Finance & Mortgage Broker</div>
@@ -705,13 +716,13 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <div class="eyebrow">How it works</div>
         <h2 class="section-h">Simple process.<br><em>Expert guidance.</em></h2>
       </div>
-      <p class="section-p" style="padding-bottom:4px">No jargon, no runarounds. Just straight-talking advice from an experienced broker who puts your interests first.</p>
+      <p class="section-p" style="padding-bottom:4px">No jargon, no chasing, no wondering what's happening. Joe keeps you informed at every step and handles the hard parts.</p>
     </div>
     <div class="steps-grid">
       <div class="reveal d1">
         <div class="step-num-wrap"><span class="step-num-text">01</span></div>
-        <div class="step-title">Book a call</div>
-        <p class="step-desc">Reserve a phone or video call with Joe at a time that suits you — including evenings and weekends. Choose your slot in the online calendar.</p>
+        <div class="step-title">Tell Joe what you need</div>
+        <p class="step-desc">Book a free phone or video call at a time that suits you — evenings and weekends included. No forms to fill, no paperwork upfront. Just a conversation.</p>
         <div class="step-ui">
           <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px;">
             <div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">M</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">T</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">W</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">T</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">F</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">S</div><div style="font-size:9px;text-align:center;color:var(--text-3);font-weight:700;">S</div>
@@ -731,8 +742,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <div class="step-num-wrap" style="background:linear-gradient(135deg,rgba(0,212,255,0.14),rgba(99,91,255,0.08));border-color:rgba(0,212,255,0.28);">
           <span class="step-num-text" style="color:var(--blue);">02</span>
         </div>
-        <div class="step-title">Get a tailored solution</div>
-        <p class="step-desc">Joe reviews your situation and presents the most suitable finance options — often with a quote ready on the call. No pressure, no obligation.</p>
+        <div class="step-title">Hear your real options</div>
+        <p class="step-desc">Joe reviews your situation honestly — and tells you exactly what's possible, what it'll cost, and why. Often with a quote ready on that first call. No pressure, ever.</p>
         <div class="step-ui">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
             <span style="font-size:11px;color:var(--text-3);font-weight:700;letter-spacing:0.04em;text-transform:uppercase;">Your offer</span>
@@ -746,8 +757,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <div class="step-num-wrap" style="background:linear-gradient(135deg,rgba(0,201,167,0.14),rgba(0,212,255,0.08));border-color:rgba(0,201,167,0.28);">
           <span class="step-num-text" style="color:var(--teal);">03</span>
         </div>
-        <div class="step-title">We handle it all</div>
-        <p class="step-desc">Providence manages the application from start to settlement. Communication is prompt and clear at every step — so you're never left wondering.</p>
+        <div class="step-title">We handle everything from here</div>
+        <p class="step-desc">Once you're happy, Providence takes care of the entire application — paperwork, lender follow-ups, and settlement. You'll always know where things stand.</p>
         <div class="step-ui">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
@@ -784,7 +795,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <p class="testi-body">Just finished my refinance with Joe & Providence Finance Hub for my home loan. He got us the best offer. Joe always listens to your needs and any questions you have. The whole process went easy and smooth. Joe went beyond our expectations. Highly recommend for their excellent and transparent services.</p>
         <div class="testi-foot">
           <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&q=80" class="testi-av" alt="J.R." style="width:40px;height:40px;border-radius:50%;">
-          <div><div class="testi-name">J.R.</div><div class="testi-role">Home loan refinance</div></div>
+          <div><div class="testi-name">J. Rizk</div><div class="testi-role">Home loan refinance · Sydney, NSW</div></div>
         </div>
       </div>
       <div class="testi-card reveal d2">
@@ -799,7 +810,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <p class="testi-body">Recently had the pleasure of working with Providence Finance Hub for a business loan. The process was remarkably fast and the team, especially Joe, provided exceptional service. Joe's insightful financial advice helped me make informed decisions, and he ensured the loan was secured promptly.</p>
         <div class="testi-foot">
           <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&q=80" class="testi-av" alt="B.C." style="width:40px;height:40px;border-radius:50%;">
-          <div><div class="testi-name">B.C.</div><div class="testi-role">Business loan client</div></div>
+          <div><div class="testi-name">B. Chahine</div><div class="testi-role">Business loan · Melbourne, VIC</div></div>
         </div>
       </div>
       <div class="testi-card reveal d3">
@@ -814,7 +825,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <p class="testi-body">Thank you so much for your time and huge effort from you and the Providence Finance Hub team. I am truly amazed and grateful to have been able to get the best possible option. I am thankful for the connection that brought us to you. Just another big THANK YOU!</p>
         <div class="testi-foot">
           <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80" class="testi-av" alt="S. Masudome" style="width:40px;height:40px;border-radius:50%;">
-          <div><div class="testi-name">S. Masudome</div><div class="testi-role">Home loan client</div></div>
+          <div><div class="testi-name">S. Masudome</div><div class="testi-role">Home loan · Brisbane, QLD</div></div>
         </div>
       </div>
     </div>
@@ -832,7 +843,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
           <p class="testi-body" style="margin-bottom:16px;">"Providence Finance Hub facilitated our second property mortgage seamlessly. Their expertise and personalised service made the process stress-free. From initial consultation to finalising terms, they demonstrated exceptional knowledge and dedication. Communication was prompt and clear, ensuring we were informed at every step. Their commitment to finding the best financial solution tailored to our needs was evident throughout. They surpassed our expectations."</p>
           <div class="testi-foot">
             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&q=80" class="testi-av" alt="S.P." style="width:40px;height:40px;border-radius:50%;">
-            <div><div class="testi-name">S.P.</div><div class="testi-role">Investment property purchase</div></div>
+            <div><div class="testi-name">S. Papadopoulos</div><div class="testi-role">Investment property mortgage · Perth, WA</div></div>
           </div>
         </div>
         <div style="text-align:center;flex-shrink:0;padding:24px;background:rgba(99,91,255,0.07);border-radius:16px;border:1px solid rgba(99,91,255,0.15);">
@@ -847,6 +858,51 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
           <div style="font-size:11px;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Client rating</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCERNS -->
+<div class="section-light">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 56px;">
+      <div class="eyebrow">We hear this all the time</div>
+      <h2 class="section-h">Worried it won't <em>work for you?</em></h2>
+      <p class="section-p" style="margin:0 auto;text-align:center;">Most clients come to Joe after a bank said no, or after feeling like they didn't fit the mould. That's exactly who we're here for.</p>
+    </div>
+    <div class="concerns-grid reveal">
+      <div class="concern-card">
+        <div class="concern-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="1.8" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="concern-q">"I'm self-employed — banks always knock me back."</div>
+        <p class="concern-a">Self-employed applications are Joe's specialty. He knows exactly how to present irregular income to the right lenders — and which lenders to avoid.</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="concern-q">"My credit history isn't perfect."</div>
+        <p class="concern-a">A blemish on your credit file isn't necessarily a dealbreaker. Joe assesses the full picture and matches you with lenders suited to your actual situation.</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="concern-q">"I don't understand finance — I'm afraid of making the wrong call."</div>
+        <p class="concern-a">Joe explains everything in plain language. No jargon, no pressure. You'll understand exactly what you're signing and why it's right for you before anything moves forward.</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        </div>
+        <div class="concern-q">"I've been rejected before and don't want to waste my time again."</div>
+        <p class="concern-a">Joe won't send your application somewhere it'll fail. He assesses lender fit before a single form is submitted — protecting your credit file and your time.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:48px;">
+      <a href="#" class="btn-cta" onclick="openModal(event)">Talk to Joe — no obligation <span class="arr">→</span></a>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-3);font-weight:500;">Free consultation · Response within 60 minutes · No credit check to speak with us</p>
     </div>
   </div>
 </div>
@@ -898,7 +954,9 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   <div id="modal">
     <button class="m-close" onclick="closeModal()">✕</button>
     <div class="m-logo-row">
-      <div class="m-logo-mark"></div>
+      <div style="width:32px;height:32px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#c8dff0;">
+        <img src="joe.png" alt="Joe" style="width:130%;height:130%;object-fit:cover;object-position:center top;margin:-15% 0 0 -15%;">
+      </div>
       <div>
         <div class="m-logo-name">Providence Finance Hub</div>
         <div class="m-logo-sub">Authorised Credit Rep #553779</div>
