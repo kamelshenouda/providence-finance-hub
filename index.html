@@ -39,11 +39,17 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--f-body);background:var(--bg);color:var(--text-1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background 350ms var(--ease-o),color 350ms var(--ease-o);}
 
-/* LOGO IMAGE */
-.nav-logo-img{height:34px;width:auto;filter:brightness(0) invert(1);transition:filter 350ms var(--ease-o);}
-[data-theme="light"] .nav-logo-img{filter:brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(600%) hue-rotate(218deg) brightness(108%);}
-.foot-logo-img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:0.7;}
-[data-theme="light"] .foot-logo-img{filter:brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(600%) hue-rotate(218deg) brightness(108%);opacity:1;}
+/* LOGO GRADIENT MASK */
+.nav-logo-grad{height:34px;width:178px;flex-shrink:0;
+  background:linear-gradient(135deg,#FFFFFF 0%,#C8F6FF 55%,#A0FFF0 100%);
+  -webkit-mask-image:url('header_logo.png');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:left center;
+  mask-image:url('header_logo.png');mask-size:contain;mask-repeat:no-repeat;mask-position:left center;}
+[data-theme="light"] .nav-logo-grad{background:linear-gradient(135deg,#635BFF 0%,#00D4FF 55%,#00C9A7 100%);}
+.foot-logo-grad{height:26px;width:136px;flex-shrink:0;opacity:0.55;
+  background:linear-gradient(135deg,#FFFFFF,#C8F6FF);
+  -webkit-mask-image:url('header_logo.png');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:left center;
+  mask-image:url('header_logo.png');mask-size:contain;mask-repeat:no-repeat;mask-position:left center;}
+[data-theme="light"] .foot-logo-grad{background:linear-gradient(135deg,#635BFF,#00D4FF);opacity:0.85;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:all 400ms var(--ease-o);}
@@ -359,7 +365,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <img src="header_logo.png" alt="Providence Finance Hub" class="nav-logo-img">
+    <div class="nav-logo-grad" role="img" aria-label="Providence Finance Hub"></div>
     <span class="nav-logo-sub" style="margin-left:4px;">Authorised Credit Rep #553779</span>
   </a>
   <div class="nav-links">
@@ -385,8 +391,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <div class="hero-grid"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag"><span class="hero-tag-dot"></span>Your broker. Not the bank's.</div>
-    <h1>Getting a loan shouldn't feel<br>like <span class="grad">fighting a system.</span></h1>
+    <div class="hero-tag"><span class="hero-tag-dot"></span>20+ Years of Australian Banking Experience</div>
+    <h1>Finance solutions<br>built around <span class="grad">your goals.</span></h1>
     <p class="hero-sub">Joe has 20+ years inside Australian banking — and left to work for you instead. Business loans, asset finance, home loans. Especially for the self-employed.</p>
     <div class="hero-actions">
       <a href="#" class="btn-cta" onclick="openModal(event)">Talk to Joe — it's free <span class="arr">→</span></a>
@@ -937,7 +943,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
 <div class="footer-wrap">
   <div class="footer-inner">
     <div class="foot-logo">
-      <img src="header_logo.png" alt="Providence Finance Hub" class="foot-logo-img">
+      <div class="foot-logo-grad" role="img" aria-label="Providence Finance Hub"></div>
     </div>
     <div class="foot-legal">
       Jireh Trading Pty Ltd (ABN 66 665 388 429) t/as Providence Finance Hub. Authorised Credit Representative #553779 of Jireh Group Holdings Pty Ltd (ABN 52 665 385 062), Australian Credit Licence #547423. Credit assistance is subject to eligibility and approval. Fees and charges apply.
