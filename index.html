@@ -39,6 +39,12 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--f-body);background:var(--bg);color:var(--text-1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background 350ms var(--ease-o),color 350ms var(--ease-o);}
 
+/* LOGO IMAGE */
+.nav-logo-img{height:34px;width:auto;filter:brightness(0) invert(1);transition:filter 350ms var(--ease-o);}
+[data-theme="light"] .nav-logo-img{filter:brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(600%) hue-rotate(218deg) brightness(108%);}
+.foot-logo-img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:0.7;}
+[data-theme="light"] .foot-logo-img{filter:brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(600%) hue-rotate(218deg) brightness(108%);opacity:1;}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:all 400ms var(--ease-o);}
 nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);}
@@ -353,13 +359,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="10" r="2.2" fill="#fff"/></svg>
-    </div>
-    <div>
-      <span class="nav-logo-text">Providence Finance Hub</span>
-      <span class="nav-logo-sub">Authorised Credit Rep #553779</span>
-    </div>
+    <img src="header_logo.png" alt="Providence Finance Hub" class="nav-logo-img">
+    <span class="nav-logo-sub" style="margin-left:4px;">Authorised Credit Rep #553779</span>
   </a>
   <div class="nav-links">
     <a href="#services" class="nav-link">Services</a>
@@ -936,8 +937,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
 <div class="footer-wrap">
   <div class="footer-inner">
     <div class="foot-logo">
-      <div class="foot-logo-mark"></div>
-      <span class="foot-name">Providence Finance Hub</span>
+      <img src="header_logo.png" alt="Providence Finance Hub" class="foot-logo-img">
     </div>
     <div class="foot-legal">
       Jireh Trading Pty Ltd (ABN 66 665 388 429) t/as Providence Finance Hub. Authorised Credit Representative #553779 of Jireh Group Holdings Pty Ltd (ABN 52 665 385 062), Australian Credit Licence #547423. Credit assistance is subject to eligibility and approval. Fees and charges apply.
