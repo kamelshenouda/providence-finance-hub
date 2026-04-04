@@ -200,6 +200,12 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
   .about-story-grid{grid-template-columns:1fr;}
   .footer-inner{flex-direction:column;gap:16px;text-align:center;padding:32px 24px;}
   .foot-links{justify-content:center;}
+  .joe-card{grid-template-columns:1fr !important;}
+  .joe-photo{height:300px;}
+  .about-stats{grid-template-columns:1fr !important;}
+  .about-mission-inner{grid-template-columns:1fr !important;}
+  .about-story-row{grid-template-columns:1fr !important;}
+  .about-wrap{padding:56px 24px !important;}
 }
 </style>
 </head>
@@ -241,91 +247,96 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 </header>
 
 <!-- ABOUT US -->
-<div id="about" class="section-light" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="section-wrap">
-    <div class="bento">
+<div id="about" style="background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="about-wrap" style="max-width:1200px;margin:0 auto;padding:80px 48px;display:flex;flex-direction:column;gap:16px;">
 
-      <!-- Joe Martin — large photo card -->
-      <div class="bento-cell c-5 reveal d1" style="overflow:hidden;min-height:420px;position:relative;">
-        <img src="joe2.png" alt="Joe Martin — Founder & Finance Broker" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
-        <!-- gradient overlay bottom -->
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,0.97) 0%,rgba(10,37,64,0.5) 45%,transparent 100%);"></div>
-        <!-- teal accent top bar -->
+    <!-- Joe profile card -->
+    <div class="joe-card reveal" style="display:grid;grid-template-columns:380px 1fr;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--bg-card);min-height:380px;box-shadow:var(--sh-md);">
+      <div class="joe-photo" style="overflow:hidden;background:#0b1e30;position:relative;">
+        <img src="joe2.png" alt="Joe Martin — Founder" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));"></div>
-        <!-- content overlay -->
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:32px;">
-          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,201,167,0.18);border:1px solid rgba(0,201,167,0.35);border-radius:9999px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;">Founder &amp; Director</div>
-          <div style="font-family:var(--f-display);font-size:28px;font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1.15;margin-bottom:10px;">Joe Martin</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.72);line-height:1.65;margin-bottom:20px;">18 years across mortgages, SME and corporate finance at Australia's top 4 banks. Qualified in Applied Finance &amp; Management.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.62);">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              1002/84 Pitt St, Sydney NSW 2000
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:12px;">
+      </div>
+      <div style="padding:44px 48px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,201,167,0.10);border:1px solid rgba(0,201,167,0.25);border-radius:9999px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;width:fit-content;">Founder &amp; Director</div>
+        <div style="font-family:var(--f-display);font-size:38px;font-weight:700;letter-spacing:-0.04em;color:var(--text-1);line-height:1.1;margin-bottom:6px;">Joe Martin</div>
+        <div style="font-size:14px;color:var(--purple-l);font-weight:600;margin-bottom:22px;">Providence Finance Hub &middot; ACR #553779</div>
+        <p style="font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:30px;max-width:460px;">18 years across mortgages, SME and corporate finance in Australia&#39;s top 4 banks &mdash; now working entirely for you. Bringing insider expertise to every client conversation, no matter the size of your goals.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+          <a href="tel:0280443312" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-2);text-decoration:none;">
+            <div style="width:32px;height:32px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:0280443312" style="color:rgba(255,255,255,0.75);text-decoration:none;font-weight:600;">02 8044 3312</a>
             </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:12px;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:info@providencefinancehub.com.au" style="color:rgba(255,255,255,0.75);text-decoration:none;font-weight:600;">info@providencefinancehub.com.au</a>
+            02 8044 3312
+          </a>
+          <a href="mailto:info@providencefinancehub.com.au" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-2);text-decoration:none;">
+            <div style="width:32px;height:32px;background:rgba(99,91,255,0.1);border:1px solid rgba(99,91,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-          </div>
+            info@providencefinancehub.com.au
+          </a>
+          <a href="#" onclick="openModal(event)" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--purple),#8B85FF);padding:10px 20px;border-radius:8px;box-shadow:0 4px 16px rgba(99,91,255,0.35);">Book a call &rarr;</a>
         </div>
       </div>
-
-      <!-- Mission + Stats -->
-      <div class="bento-cell c-7 reveal d2" style="display:flex;flex-direction:column;">
-        <div class="glow-strip"></div>
-        <div class="bento-pad" style="flex:1;display:flex;flex-direction:column;">
-          <div class="bento-eyebrow">Our mission</div>
-          <div class="bento-h" style="font-size:24px;">Expertise. Integrity. Transparency.</div>
-          <p class="bento-p" style="margin-bottom:20px;">At Providence Finance Hub, our mission is to combine expertise with integrity and transparency to deliver the right client-centric solutions to our customers.</p>
-          <div class="about-quote" style="margin-bottom:28px;"><p>"We don't see our clients as just a transaction; we see you as a partner. Every interaction we have is centred around that core belief."</p></div>
-          <!-- Stat pills -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:auto;">
-            <div style="background:rgba(99,91,255,0.08);border:1px solid rgba(99,91,255,0.18);border-radius:14px;padding:18px 16px;text-align:center;">
-              <div style="font-family:var(--f-display);font-size:30px;font-weight:700;letter-spacing:-0.03em;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">18+</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text-3);margin-top:5px;line-height:1.4;">Years banking<br>experience</div>
-            </div>
-            <div style="background:rgba(0,201,167,0.07);border:1px solid rgba(0,201,167,0.18);border-radius:14px;padding:18px 16px;text-align:center;">
-              <div style="font-family:var(--f-display);font-size:30px;font-weight:700;letter-spacing:-0.03em;background:linear-gradient(135deg,var(--teal),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">Top 4</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text-3);margin-top:5px;line-height:1.4;">Australian<br>banks</div>
-            </div>
-            <div style="background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.16);border-radius:14px;padding:18px 16px;text-align:center;">
-              <div style="font-family:var(--f-display);font-size:30px;font-weight:700;letter-spacing:-0.03em;background:linear-gradient(135deg,var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">200+</div>
-              <div style="font-size:11px;font-weight:600;color:var(--text-3);margin-top:5px;line-height:1.4;">Clients<br>helped</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Our Story -->
-      <div class="bento-cell c-6 reveal d1">
-        <div class="glow-strip" style="background:linear-gradient(90deg,var(--purple),var(--blue));"></div>
-        <div class="bento-pad">
-          <div class="bento-eyebrow">Our story</div>
-          <div class="bento-h" style="font-size:19px;margin-bottom:16px;">Built from the inside out.</div>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:14px;">After spending 18 years in Banking, the time was right to step out and establish the Providence Finance Hub team — offering our expertise to help clients achieve their goals and make their dreams a reality.</p>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.8;">Our background covers Mortgages, Small to Medium Businesses, and Corporate Financial Services, spanning multiple industries including Healthcare Banking within Australia's top 4 banks. We've also worked across private bank and property development lending.</p>
-        </div>
-      </div>
-
-      <!-- Our Commitment -->
-      <div class="bento-cell c-6 reveal d2">
-        <div class="glow-strip" style="background:linear-gradient(90deg,var(--teal),var(--blue));"></div>
-        <div class="bento-pad">
-          <div class="bento-eyebrow" style="color:var(--teal);">Our commitment</div>
-          <div class="bento-h" style="font-size:19px;margin-bottom:16px;">Every client, every size.</div>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:14px;">My team and I are passionate about supporting the diverse needs of our clients — whether they are just starting out or looking to expand their business goals. To us, customer service means helping people from all walks of life: from the first home buyer to the multi-million dollar transaction.</p>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.8;">The team at Providence Finance Hub are always willing to deliver the best outcomes for our clients regardless of their size. I hold several years of leadership experience and qualifications in Applied Finance and Management.</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Stats strip -->
+    <div class="about-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="reveal d1" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--blue));opacity:0.7;"></div>
+        <div style="font-family:var(--f-display);font-size:42px;font-weight:700;letter-spacing:-0.04em;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px;">18+</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Years banking experience</div>
+        <div style="font-size:12px;color:var(--text-3);">Mortgages &middot; SME &middot; Corporate</div>
+      </div>
+      <div class="reveal d2" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue));opacity:0.7;"></div>
+        <div style="font-family:var(--f-display);font-size:42px;font-weight:700;letter-spacing:-0.04em;background:linear-gradient(135deg,var(--teal),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px;">Top 4</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Australian banks</div>
+        <div style="font-size:12px;color:var(--text-3);">Deep institutional knowledge</div>
+      </div>
+      <div class="reveal d3" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));opacity:0.7;"></div>
+        <div style="font-family:var(--f-display);font-size:42px;font-weight:700;letter-spacing:-0.04em;background:linear-gradient(135deg,var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px;">200+</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Clients helped</div>
+        <div style="font-size:12px;color:var(--text-3);">From first homes to multi-million</div>
+      </div>
+    </div>
+
+    <!-- Mission card -->
+    <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:48px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--blue),var(--teal));opacity:0.7;"></div>
+      <div class="about-mission-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--purple);margin-bottom:14px;">Our mission</div>
+          <h3 style="font-family:var(--f-display);font-size:30px;font-weight:700;letter-spacing:-0.03em;line-height:1.18;color:var(--text-1);margin-bottom:18px;">Expertise.<br>Integrity.<br>Transparency.</h3>
+          <p style="font-size:15px;color:var(--text-2);line-height:1.8;">At Providence Finance Hub, our mission is to combine expertise with integrity and transparency to deliver the right client-centric solutions to our customers.</p>
+        </div>
+        <div style="padding:28px 32px;background:rgba(99,91,255,0.06);border:1px solid rgba(99,91,255,0.14);border-radius:16px;border-left:3px solid var(--purple);">
+          <div style="font-family:Georgia,serif;font-size:48px;font-weight:700;color:var(--purple);opacity:0.35;line-height:0.8;margin-bottom:18px;">"</div>
+          <p style="font-size:16px;font-style:italic;color:var(--text-2);line-height:1.8;">We don&#39;t see our clients as just a transaction; we see you as a partner. Every interaction we have is centred around that core belief.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story row -->
+    <div class="about-story-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="reveal d1" style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--blue));opacity:0.6;"></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;">Our story</div>
+        <h4 style="font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:-0.02em;color:var(--text-1);margin-bottom:16px;">Built from the inside out.</h4>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.82;margin-bottom:14px;">After spending 18 years in Banking, the time was right to step out and establish the Providence Finance Hub team &mdash; offering our expertise to help clients achieve their goals and make their dreams a reality.</p>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.82;">Our background covers Mortgages, Small to Medium Businesses, and Corporate Financial Services, spanning multiple industries including Healthcare Banking within Australia&#39;s top 4 banks. We&#39;ve also worked across private bank and property development lending.</p>
+      </div>
+      <div class="reveal d2" style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue));opacity:0.6;"></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;">Our commitment</div>
+        <h4 style="font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:-0.02em;color:var(--text-1);margin-bottom:16px;">Every client, every size.</h4>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.82;margin-bottom:14px;">My team and I are passionate about supporting the diverse needs of our clients &mdash; whether they are just starting out or looking to expand their business goals. From the first home buyer to the multi-million dollar transaction.</p>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.82;">The team at Providence Finance Hub are always willing to deliver the best outcomes regardless of client size. I hold several years of leadership experience and qualifications in Applied Finance and Management.</p>
+      </div>
+    </div>
+
   </div>
 </div>
-
 <!-- WHY USE A BROKER -->
 <div style="border-bottom:1px solid var(--border);">
   <div class="section-wrap">
