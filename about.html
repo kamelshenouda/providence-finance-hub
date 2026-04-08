@@ -875,11 +875,16 @@ function showNotQualifiedResult(){
 }
 
 function initChat(){
-  chatStarted=true;chatState='greeting';
-  chatHistory=[{role:'user',content:'Hi'}];
-  capturedData={};contactStep=0;
-  $msgs().innerHTML='';clearOpts();hideAmountSlider();setInpRow(false);showTyping(false);setChatErr('');leadQualified=true;
-  callClaude(null);
+  chatStarted=true;chatState='qualifying';
+  capturedData={};contactStep=0;leadQualified=true;
+  $msgs().innerHTML='';clearOpts();hideAmountSlider();setInpRow(false);showTyping(false);setChatErr('');
+  const welcome="Hi there! We're here to help you find the right finance solution — whether it's a home loan, business finance, or something else. How can we help you?";
+  const firstOpts=["Buy a home","Refinance my loan","Business finance","Asset / Equipment","Something else"];
+  chatHistory=[
+    {role:'user',content:'Hi'},
+    {role:'assistant',content:JSON.stringify({message:welcome,type:'question',options:firstOpts})}
+  ];
+  setTimeout(()=>{appendBubble(welcome,'ai');renderOpts(firstOpts);setInpRow(true,'Type a message…','text');},300);
 }
 
 document.addEventListener('DOMContentLoaded',function(){
