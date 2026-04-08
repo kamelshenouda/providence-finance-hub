@@ -832,14 +832,63 @@ function askContact(){
 }
 
 function handleContactInput(){
-  const v=$inp().value.trim(),s=CONTACT_STEPS[contactStep];
+  const v=$inp().value.trim();
   if(!v)return;
-  if(s.field==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){setChatErr('Please enter a valid email address.');return;}
-  if(s.field==='phone'&&!/^[\d\s\(\)\+\-]{7,15}$/.test(v)){setChatErr('Please enter a valid phone number.');return;}
-  setChatErr('');capturedData[s.field]=v;appendBubble(v,'user');$inp().value='';setInpRow(false);
-  contactStep++;
-  if(contactStep<CONTACT_STEPS.length){setTimeout(()=>askContact(),400);}
-  else{showTyping(true);setTimeout(()=>{showTyping(false);finalizeLead();},800);}
+  $inp().value='';
+  appendBubble(v,'user');
+  clearOpts();
+  callClaudeForContact(v);
+}
+
+async function callClaudeForContact(userMsg){
+  const s=CONTACT_STEPS[contactStep];
+  const contactPrompt=`You are a warm, friendly team member at Providence Finance Hub. You are collecting the user's contact details after a finance qualification chat.
+
+You currently need their ${s.label}.
+The user just said: "${userMsg}"
+
+Rules:
+- If they clearly provided their ${s.label}, extract the exact value and give a short warm acknowledgment (e.g. "Thanks!" or "Got it!").
+- If the message is something else — a question, concern, or unrelated statement — respond naturally and helpfully to it, then gently re-ask for their ${s.label}.
+- If what they gave looks like a ${s.field} but is invalid (e.g. obviously wrong email format, too short), point it out kindly and ask again.
+- Keep replies short (1–2 sentences).
+
+Respond in JSON only — no other text:
+{"type":"contact_value","value":"<exact extracted value>","message":"<short warm reply>"} — if they provided valid info
+{"type":"contact_chat","message":"<natural reply ending with a re-ask for their ${s.label}>"} — otherwise`;
+
+  showTyping(true);setInpRow(false);setChatErr('');
+  if($send())$send().disabled=true;
+  try{
+    const res=await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:CLAUDE_MODEL,max_tokens:256,
+        messages:[{role:'system',content:contactPrompt},...chatHistory,{role:'user',content:userMsg}]})
+    });
+    if(!res.ok)throw new Error('API error '+res.status);
+    const data=await res.json();
+    const raw=data.choices[0].message.content.trim();
+    showTyping(false);if($send())$send().disabled=false;
+    let parsed;
+    try{parsed=JSON.parse(raw.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,''));}
+    catch(e){appendBubble(raw,'ai');setTimeout(()=>setInpRow(true,s.placeholder,s.type),400);return;}
+    appendBubble(parsed.message,'ai');
+    if(parsed.type==='contact_value'){
+      capturedData[s.field]=parsed.value;
+      chatHistory.push({role:'user',content:userMsg});
+      chatHistory.push({role:'assistant',content:parsed.message});
+      contactStep++;
+      if(contactStep<CONTACT_STEPS.length){setTimeout(()=>askContact(),500);}
+      else{showTyping(true);setTimeout(()=>{showTyping(false);finalizeLead();},800);}
+    }else{
+      setTimeout(()=>setInpRow(true,s.placeholder,s.type),400);
+    }
+  }catch(err){
+    showTyping(false);if($send())$send().disabled=false;
+    appendBubble('Sorry, hit a connection issue — please try again.','ai');
+    setInpRow(true,s.placeholder,s.type);
+  }
 }
 
 function finalizeLead(){
