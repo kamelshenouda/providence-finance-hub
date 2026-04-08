@@ -303,7 +303,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:#fff;borde
 
 /* CHAT MODAL */
 .m-ai-avatar{position:relative;width:36px;height:36px;flex-shrink:0;}
-.m-ai-avatar-img{width:36px;height:36px;border-radius:10px;object-fit:cover;object-position:center top;display:block;}
+.m-ai-avatar-img{width:36px;height:36px;border-radius:10px;object-fit:contain;background:#fff;padding:4px;display:block;}
 .m-ai-status-dot{position:absolute;bottom:-2px;right:-2px;width:10px;height:10px;background:var(--green);border-radius:50%;border:2px solid var(--modal-bg);}
 .m-chat-wrap{display:flex;flex-direction:column;gap:0;}
 .chat-messages{display:flex;flex-direction:column;gap:10px;max-height:420px;min-height:260px;overflow-y:auto;padding:4px 2px 12px;scroll-behavior:smooth;}
@@ -1107,12 +1107,12 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <button class="m-close" onclick="closeModal()">✕</button>
     <div class="m-logo-row">
       <div class="m-ai-avatar">
-        <img src="joe.png" alt="Providence Finance Hub" class="m-ai-avatar-img">
+        <img src="header_logo.png" alt="Providence Finance Hub" class="m-ai-avatar-img">
         <span class="m-ai-status-dot"></span>
       </div>
       <div>
-        <div class="m-logo-name">Providence AI</div>
-        <div class="m-logo-sub">Powered by Claude · Providence Finance Hub</div>
+        <div class="m-logo-name">Providence Team Assistance</div>
+        <div class="m-logo-sub">Providence Finance Hub</div>
       </div>
     </div>
     <div id="m-chat" class="m-chat-wrap">
@@ -1227,13 +1227,17 @@ const CONTACT_STEPS=[
   {field:'phone',label:'your phone number',  placeholder:'e.g. 0400 000 000',    type:'tel'}
 ];
 
-const SYSTEM_PROMPT=`You are "Providence AI" — the warm, friendly guide for Providence Finance Hub, an Australian finance brokerage. Your job is a natural, human conversation that helps the Providence team understand exactly who they can help and how.
+const SYSTEM_PROMPT=`You are a friendly team member at Providence Finance Hub, an Australian finance brokerage. Your job is a natural, human conversation that helps the team understand who they can help and how.
 
 PERSONA:
-- Genuinely warm and encouraging — like a knowledgeable friend, not a form
+- Sound like a real person — warm, relaxed, genuine. NOT a bot or virtual assistant.
 - Short, punchy messages (1–2 sentences max). Never clinical or robotic.
-- Light Australian tone — approachable, real, never stiff
-- Never mention you are Claude or an AI
+- Light Australian tone — conversational and real, never corporate or stiff
+- Never introduce yourself as an AI, assistant, or virtual agent
+- Never say things like "Hello! How can I assist you today?" — that sounds automated
+
+OPENING MESSAGE (first message only):
+- Start casually, like a team member picking up a chat — e.g. "Hey, good to hear from you! What are you looking to sort out — is it a home loan, business finance, or something else?" or "Hi there! What can we help you with today?" Keep it short and natural.
 
 QUALIFICATION CRITERIA:
 1. Loan purpose: home loan, refinance, business loan, asset finance, commercial property, personal loan
@@ -1244,7 +1248,7 @@ QUALIFICATION CRITERIA:
 6. Urgency helps the team prioritise their callback list
 
 CONVERSATION FLOW — follow this exact order, one question at a time:
-1. Warm greeting + ask what brings them here
+1. Casual greeting + ask what brings them here
    options: ["Buy a home","Refinance my loan","Business finance","Asset / Equipment","Something else"]
 2. Loan amount — use type "amount_slider" (the UI auto-renders a slider, no options needed)
    Ask something like: "Nice! And roughly how much are you looking to borrow?"
