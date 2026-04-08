@@ -118,9 +118,9 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 .hs-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;}
 .hs-slide.hs-active{opacity:1;}
 .hs-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-.hs-overlay{position:absolute;inset:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:32px 48px 32px;}
-.hs-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(99,91,255,0.35);border:1px solid rgba(99,91,255,0.55);border-radius:9999px;padding:5px 14px;font-size:11px;font-weight:700;color:#b8b3ff;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
-.hs-label{font-family:var(--f-display);font-size:30px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;}
+.hs-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,8,20,0.72) 0%,rgba(4,8,20,0.18) 42%,transparent 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:32px 48px 32px;}
+.hs-tag{display:inline-flex;align-items:center;background:#fff;border-radius:9999px;padding:5px 16px;font-size:11px;font-weight:800;color:#3730a3;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:10px;box-shadow:0 2px 12px rgba(0,0,0,0.25);}
+.hs-label{font-family:var(--f-display);font-size:30px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;text-shadow:0 2px 16px rgba(0,0,0,0.6);}
 .hs-dots{display:flex;gap:7px;align-items:center;justify-content:center;}
 .hs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.35);transition:all 0.35s ease;cursor:pointer;border:none;padding:0;}
 .hs-dot.hs-active{width:24px;border-radius:4px;background:#fff;}
@@ -561,19 +561,24 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   <div class="hero-dashboard">
     <div class="hs-wrap" id="hs-wrap">
       <div class="hs-slide hs-active">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=520&fit=crop&q=80" alt="Business Loans" loading="eager">
+        <!-- Business Loans: warm business owners in meeting -->
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=600&fit=crop&q=85&auto=format" alt="Business Loans" loading="eager">
       </div>
       <div class="hs-slide">
-        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&h=520&fit=crop&q=80" alt="Asset Finance" loading="lazy">
+        <!-- Asset Finance: truck driver / transport -->
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&h=600&fit=crop&q=85&auto=format" alt="Asset Finance" loading="lazy">
       </div>
       <div class="hs-slide">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=520&fit=crop&q=80" alt="Home Loans" loading="lazy">
+        <!-- Home Loans: happy couple at new home -->
+        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&h=600&fit=crop&q=85&auto=format" alt="Home Loans" loading="lazy">
       </div>
       <div class="hs-slide">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=520&fit=crop&q=80" alt="Commercial Loans" loading="lazy">
+        <!-- Commercial Loans: construction / development -->
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=600&fit=crop&q=85&auto=format" alt="Commercial Loans" loading="lazy">
       </div>
       <div class="hs-slide">
-        <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=900&h=520&fit=crop&q=80" alt="Personal Loans" loading="lazy">
+        <!-- Personal Loans: warm smiling person -->
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop&q=85&auto=format" alt="Personal Loans" loading="lazy">
       </div>
       <div class="hs-overlay">
         <div class="hs-tag" id="hs-tag">Business Loans</div>
