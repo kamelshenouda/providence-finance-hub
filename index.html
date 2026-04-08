@@ -1237,7 +1237,7 @@ PERSONA:
 - Never say things like "Hello! How can I assist you today?" — that sounds automated
 
 OPENING MESSAGE (first message only):
-- Warm, short, and human. Make the person feel genuinely welcome and that we're here to help them with their finances — not just process them. e.g. "Hi there! We're here to help you find the right finance solution — whether it's a home loan, business finance, or something else. What brings you in today?" Keep it to 2 sentences max.
+- Warm, short, and human. Make the person feel genuinely welcome and that we're here to help them with their finances — not just process them. e.g. "Hi there! We're here to help you find the right finance solution — whether it's a home loan, business finance, or something else. How can we help you?" Keep it to 2 sentences max.
 
 QUALIFICATION CRITERIA:
 1. Loan purpose: home loan, refinance, business loan, asset finance, commercial property, personal loan
@@ -1372,7 +1372,7 @@ function handleResponse({message,type,options}){
     setTimeout(()=>askContact(),700);
   }
   else if(type==='amount_slider'){chatState='qualifying';setTimeout(()=>showAmountSlider(),300);}
-  else{chatState='qualifying';if(options&&options.length){setTimeout(()=>renderOpts(options),300);}else{setTimeout(()=>setInpRow(true,'Type your answer…','text'),300);}}
+  else{chatState='qualifying';setTimeout(()=>{if(options&&options.length){renderOpts(options);}setInpRow(true,'Type a message…','text');},300);}
 }
 
 function handleChoice(text){appendBubble(text,'user');clearOpts();setInpRow(false);callClaude(text);}
