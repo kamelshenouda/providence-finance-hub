@@ -1212,7 +1212,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
    For production: proxy the API call through a backend so the
    key is never exposed in browser source.
    ============================================================ */
-const OPENAI_MODEL='gpt-4o-mini';
+const CLAUDE_MODEL='claude-haiku-4-5-20251001';
 const BOOKING_URL='https://calendly.com/joe-providencefinancehub/follow-up-meeting';
 
 let chatState='idle';
@@ -1313,7 +1313,7 @@ async function callClaude(userMsg){
     const res=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:OPENAI_MODEL,max_tokens:512,
+      body:JSON.stringify({model:CLAUDE_MODEL,max_tokens:512,
         messages:[{role:'system',content:SYSTEM_PROMPT},...chatHistory]})
     });
     if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||'API error '+res.status);}
