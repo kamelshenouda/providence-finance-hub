@@ -73,7 +73,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 .btn-nav:active{transform:scale(0.97);}
 
 /* HERO */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 48px 64px;text-align:center;overflow:hidden;}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 48px 80px;text-align:center;overflow:hidden;}
 .hero-mesh{position:absolute;inset:0;z-index:0;pointer-events:none;}
 .blob{position:absolute;border-radius:50%;filter:blur(80px);animation:blob-drift var(--dur,18s) ease-in-out infinite;}
 .blob-1{width:700px;height:500px;background:radial-gradient(ellipse,rgba(99,91,255,0.35) 0%,transparent 70%);top:-100px;left:-150px;--dur:20s;}
@@ -85,7 +85,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 @keyframes blob-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.96)}}
 .hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.08) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 0%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 0%,transparent 100%);}
 [data-theme="light"] .hero-grid{background-image:radial-gradient(rgba(10,37,64,0.07) 1px,transparent 1px);}
-.hero-content{position:relative;z-index:1;max-width:880px;}
+.hero-content{position:relative;z-index:1;width:100%;max-width:960px;}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(99,91,255,0.12);border:1px solid rgba(99,91,255,0.3);border-radius:9999px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--purple-l);margin-bottom:20px;letter-spacing:0.01em;opacity:0;animation:rise 0.6s var(--ease-o) 0.1s forwards;}
 .hero-tag-dot{width:6px;height:6px;background:var(--purple-l);border-radius:50%;animation:pulse 2s ease infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
@@ -113,7 +113,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
 /* HERO SLIDESHOW */
-.hero-dashboard{position:relative;z-index:1;margin-top:48px;opacity:0;animation:rise 0.9s var(--ease-o) 0.6s forwards;width:100%;border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.08),0 0 80px rgba(99,91,255,0.18);}
+.hero-dashboard{position:relative;z-index:1;margin-top:28px;margin-bottom:32px;opacity:0;animation:rise 0.9s var(--ease-o) 0.6s forwards;width:100%;border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.08),0 0 80px rgba(99,91,255,0.18);}
 .hs-wrap{position:relative;width:100%;height:540px;background:#07121f;}
 .hs-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;}
 .hs-slide.hs-active{opacity:1;}
@@ -128,8 +128,8 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 .hs-progress-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--teal));width:0;}
 
 /* SERVICES STRIP */
-.services-strip{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;}
-.services-row{display:grid;grid-template-columns:repeat(5,1fr);max-width:1200px;margin:0 auto;}
+.services-strip{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:12px;}
+.services-row{display:grid;grid-template-columns:repeat(5,1fr);}
 .service-item{padding:20px 20px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:flex-start;gap:10px;transition:background 200ms ease;}
 .service-item:last-child{border-right:none;}
 .service-item:hover{background:var(--bg-card-h);}
@@ -409,7 +409,6 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   .nav-right{display:none;}
   nav{padding:0 20px;}
   .hero,.page-hero{padding:80px 20px 48px;}
-  .hero-dashboard{margin-top:36px;}
   .hs-wrap{height:340px;}
   .hs-label{font-size:20px;}
   .hs-overlay{padding:16px 24px 20px;}
@@ -529,7 +528,38 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   </div>
   <div class="hero-content">
     <div class="hero-tag"><span class="hero-tag-dot"></span>20+ Years of Australian Banking Experience</div>
-    <h1>Finance <span class="grad">your goals.</span></h1>
+    <h1>The right loan. <span class="grad">Right now.</span></h1>
+    <div class="hero-dashboard">
+      <div class="hs-wrap" id="hs-wrap">
+        <div class="hs-slide hs-active">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&h=620&fit=crop&crop=faces,center&q=90&auto=format" alt="Business Loans" loading="eager" style="object-position:center 30%;">
+        </div>
+        <div class="hs-slide">
+          <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1400&h=620&fit=crop&q=90&auto=format" alt="Asset Finance" loading="lazy" style="object-position:center 50%;">
+        </div>
+        <div class="hs-slide">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1400&h=620&fit=crop&q=90&auto=format" alt="Home Loans" loading="lazy" style="object-position:center 60%;">
+        </div>
+        <div class="hs-slide">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&h=620&fit=crop&q=90&auto=format" alt="Commercial Loans" loading="lazy" style="object-position:center 40%;">
+        </div>
+        <div class="hs-slide">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1400&h=620&fit=crop&crop=faces,top&q=90&auto=format" alt="Personal Loans" loading="lazy" style="object-position:center 20%;">
+        </div>
+        <div class="hs-overlay">
+          <div class="hs-tag" id="hs-tag">Business Loans</div>
+          <div class="hs-label" id="hs-label">Working capital &amp; growth finance</div>
+          <div class="hs-dots" id="hs-dots">
+            <button class="hs-dot hs-active" aria-label="Business Loans"></button>
+            <button class="hs-dot" aria-label="Asset Finance"></button>
+            <button class="hs-dot" aria-label="Home Loans"></button>
+            <button class="hs-dot" aria-label="Commercial Loans"></button>
+            <button class="hs-dot" aria-label="Personal Loans"></button>
+          </div>
+        </div>
+        <div class="hs-progress"><div class="hs-progress-fill" id="hs-progress-fill"></div></div>
+      </div>
+    </div>
     <p class="hero-sub">Providence Finance Hub brings 20+ years of Australian banking expertise — working entirely for you. Business loans, asset finance, home loans. Especially for the self-employed.</p>
     <div class="hero-actions">
       <a href="#" class="btn-cta" onclick="openModal(event)">Get in touch — it's free <span class="arr">→</span></a>
@@ -557,85 +587,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     </div>
   </div>
 
-  <!-- Hero slideshow -->
-  <div class="hero-dashboard">
-    <div class="hs-wrap" id="hs-wrap">
-      <div class="hs-slide hs-active">
-        <!-- Business Loans: two business owners in warm handshake -->
-        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&h=620&fit=crop&crop=faces,center&q=90&auto=format" alt="Business Loans" loading="eager" style="object-position:center 30%;">
-      </div>
-      <div class="hs-slide">
-        <!-- Asset Finance: truck on open highway, clear blue sky -->
-        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1400&h=620&fit=crop&q=90&auto=format" alt="Asset Finance" loading="lazy" style="object-position:center 50%;">
-      </div>
-      <div class="hs-slide">
-        <!-- Home Loans: beautiful warm family home exterior -->
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1400&h=620&fit=crop&q=90&auto=format" alt="Home Loans" loading="lazy" style="object-position:center 60%;">
-      </div>
-      <div class="hs-slide">
-        <!-- Commercial Loans: business owner in modern commercial space -->
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&h=620&fit=crop&q=90&auto=format" alt="Commercial Loans" loading="lazy" style="object-position:center 40%;">
-      </div>
-      <div class="hs-slide">
-        <!-- Personal Loans: happy woman enjoying life, warm outdoor light -->
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1400&h=620&fit=crop&crop=faces,top&q=90&auto=format" alt="Personal Loans" loading="lazy" style="object-position:center 20%;">
-      </div>
-      <div class="hs-overlay">
-        <div class="hs-tag" id="hs-tag">Business Loans</div>
-        <div class="hs-label" id="hs-label">Working capital &amp; growth finance</div>
-        <div class="hs-dots" id="hs-dots">
-          <button class="hs-dot hs-active" aria-label="Business Loans"></button>
-          <button class="hs-dot" aria-label="Asset Finance"></button>
-          <button class="hs-dot" aria-label="Home Loans"></button>
-          <button class="hs-dot" aria-label="Commercial Loans"></button>
-          <button class="hs-dot" aria-label="Personal Loans"></button>
-        </div>
-      </div>
-      <div class="hs-progress"><div class="hs-progress-fill" id="hs-progress-fill"></div></div>
-    </div>
-  </div>
 </header>
-
-<!-- SERVICES STRIP -->
-<div id="services" class="services-strip">
-  <div class="services-row">
-    <div class="service-item">
-      <div class="service-ico" style="background:linear-gradient(135deg,rgba(99,91,255,0.15),rgba(0,212,255,0.1));">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-      </div>
-      <span class="service-label">Business Loans</span>
-      <span class="service-desc">Working capital & growth finance</span>
-    </div>
-    <div class="service-item">
-      <div class="service-ico" style="background:linear-gradient(135deg,rgba(0,212,255,0.12),rgba(0,201,167,0.1));">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      </div>
-      <span class="service-label">Asset Finance</span>
-      <span class="service-desc">Vehicles, plant & equipment</span>
-    </div>
-    <div class="service-item">
-      <div class="service-ico" style="background:linear-gradient(135deg,rgba(0,201,167,0.12),rgba(99,91,255,0.08));">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <span class="service-label">Home Loans</span>
-      <span class="service-desc">Purchase, refinance & investment</span>
-    </div>
-    <div class="service-item">
-      <div class="service-ico" style="background:linear-gradient(135deg,rgba(255,120,88,0.12),rgba(99,91,255,0.08));">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <span class="service-label">Commercial Loans</span>
-      <span class="service-desc">Property & development finance</span>
-    </div>
-    <div class="service-item">
-      <div class="service-ico" style="background:linear-gradient(135deg,rgba(33,197,93,0.12),rgba(0,212,255,0.08));">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
-      </div>
-      <span class="service-label">Personal Loans</span>
-      <span class="service-desc">Flexible personal finance options</span>
-    </div>
-  </div>
-</div>
 
 <!-- WHO WE HELP -->
 <div class="who-wrap">
