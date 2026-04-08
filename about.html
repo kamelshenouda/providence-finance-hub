@@ -580,7 +580,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
     <button class="m-close" onclick="closeModal()">✕</button>
     <div class="m-logo-row">
       <div class="m-ai-avatar">
-        <img src="joe2.png" alt="Joe" class="m-ai-avatar-img">
+        <img src="joe2.png" alt="Providence Finance Hub" class="m-ai-avatar-img">
         <span class="m-ai-status-dot"></span>
       </div>
       <div>
@@ -668,7 +668,7 @@ const CONTACT_STEPS=[
   {field:'phone',label:'your phone number',  placeholder:'e.g. 0400 000 000',    type:'tel'}
 ];
 
-const SYSTEM_PROMPT=`You are "Providence AI" — the warm, friendly guide for Providence Finance Hub, an Australian finance brokerage. Your job is a natural, human conversation that helps Joe understand exactly who he can help and how.
+const SYSTEM_PROMPT=`You are "Providence AI" — the warm, friendly guide for Providence Finance Hub, an Australian finance brokerage. Your job is a natural, human conversation that helps the Providence team understand exactly who they can help and how.
 
 PERSONA:
 - Genuinely warm and encouraging — like a knowledgeable friend, not a form
@@ -682,7 +682,7 @@ QUALIFICATION CRITERIA:
 3. Employment: PAYG/employed, self-employed, business owner, retired/other
 4. Must be Australian resident or citizen (non-residents can't access most products)
 5. Active undischarged bankruptcy or Part IX in last 5 years → NOT_QUALIFIED
-6. Urgency helps Joe prioritise his callback list
+6. Urgency helps the team prioritise their callback list
 
 CONVERSATION FLOW — follow this exact order, one question at a time:
 1. Warm greeting + ask what brings them here
@@ -705,8 +705,8 @@ RESPONSE FORMAT — valid JSON only, nothing else:
 RULES:
 - type "question": ALWAYS include 2–4 options. Never empty [].
 - type "amount_slider": options must be [] — slider renders automatically
-- type "qualified": Warm and celebratory. e.g. "You're looking great — I think Joe can absolutely help here! Let me grab a couple of quick details so he can reach out."
-- type "not_qualified": Kind, empathetic, and keep the door wide open — but end with a clear invitation to share their details. We collect their info right after this message. e.g. "Thanks for being so open with me — I really appreciate it. This one might be tricky right now, but Joe still wants to hear from you personally. Let me grab your details and he'll be in touch within 1–2 business days."`;
+- type "qualified": Warm and celebratory. e.g. "You're looking great — I think Providence Finance Hub can absolutely help here! Let me grab a couple of quick details so our team can reach out."
+- type "not_qualified": Kind, empathetic, and keep the door wide open — but end with a clear invitation to share their details. We collect their info right after this message. e.g. "Thanks for being so open with me — I really appreciate it. This one might be tricky right now, but our team still wants to hear from you personally. Let me grab your details and we'll be in touch within 1–2 business days."`;
 
 const $msgs   =()=>document.getElementById('chat-messages');
 const $typing =()=>document.getElementById('chat-typing');
@@ -854,8 +854,8 @@ function finalizeLead(){
 function showQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
   w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 14 11 20 23 8"/></svg>'
-    +'<p style="font-size:14px;color:var(--text-2);margin-bottom:4px">Thanks, <strong style="color:var(--text-1)">'+(capturedData.name||'there')+'</strong>! Joe will be in touch at <strong style="color:var(--text-1)">'+capturedData.phone+'</strong> very soon.</p>'
-    +'<a href="'+BOOKING_URL+'" target="_blank" rel="noopener" class="chat-book-btn">Book a time in Joe\'s calendar →</a>'
+    +'<p style="font-size:14px;color:var(--text-2);margin-bottom:4px">Thanks, <strong style="color:var(--text-1)">'+(capturedData.name||'there')+'</strong>! Our team will be in touch at <strong style="color:var(--text-1)">'+capturedData.phone+'</strong> very soon.</p>'
+    +'<a href="'+BOOKING_URL+'" target="_blank" rel="noopener" class="chat-book-btn">Book a time with our team →</a>'
     +'<p class="f-note" style="margin-top:10px">Or call us on <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>';
   $msgs().appendChild(w);scrollMsgs();
 }
@@ -864,7 +864,7 @@ function showNotQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
   w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--purple-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
     +'<p style="font-size:15px;font-weight:700;color:var(--text-1);margin-bottom:6px">We\'ve got your details, '+(capturedData.name||'there')+'!</p>'
-    +'<p style="font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:16px">Joe will personally review your situation and get back to you within <strong style="color:var(--text-1)">1–2 business days</strong>. Things change — and he may still be able to help.</p>'
+    +'<p style="font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:16px">Our team will personally review your situation and get back to you within <strong style="color:var(--text-1)">1–2 business days</strong>. Things change — and we may still be able to help.</p>'
     +'<p class="f-note">Questions in the meantime? Call <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>'
     +'<button class="ok-close" style="display:block;width:100%;margin-top:16px" onclick="closeModal()">Close</button>';
   $msgs().appendChild(w);scrollMsgs();
