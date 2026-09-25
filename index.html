@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="vendor/lucide.min.js"></script>
+<script src="vendor/canvas-confetti.min.js"></script>
 <style>
 :root {
   --f-display:'Sora',sans-serif;
@@ -499,8 +501,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   <div class="nav-right">
     <a href="tel:1300776433" style="font-size:13px;font-weight:700;color:var(--text-2);text-decoration:none;display:none;" id="nav-phone">1300 776 433</a>
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <i data-lucide="moon" class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
+      <i data-lucide="sun" class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
     </button>
     <a href="#" class="btn-nav" onclick="openModal(event)">Book a Call →</a>
   </div>
@@ -513,8 +515,8 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
   <a href="about.html" class="nav-mobile-link">About</a>
   <div style="display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" style="flex-shrink:0;">
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <i data-lucide="moon" class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
+    <i data-lucide="sun" class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
   </button>
   <a href="#" class="btn-nav" onclick="openModal(event)" style="flex:1;text-align:center;">Book a Call →</a>
 </div>
@@ -564,7 +566,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <div class="hero-actions">
       <a href="#" class="btn-cta" onclick="openModal(event)">Get in touch — it's free <span class="arr">→</span></a>
       <a href="#calculator" class="btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
+        <i data-lucide="calculator" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
         Loan calculator
       </a>
     </div>
@@ -723,7 +725,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
           <div class="bento-h">Up to $500K — no documents required</div>
           <p class="bento-p">Vehicle and equipment finance up to $500,000 with streamlined approval. No stacks of paperwork, no delays.</p>
           <div style="margin-top:20px;display:flex;align-items:center;gap:10px;background:rgba(99,91,255,0.07);border:1px solid rgba(99,91,255,0.18);border-radius:10px;padding:14px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="1.6" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <i data-lucide="truck" width="28" height="28" fill="none" stroke="var(--purple-l)" stroke-width="1.6" stroke-linecap="round"></i>
             <div style="font-size:13px;color:var(--text-2);">Vehicles, machinery, equipment — <span style="color:var(--purple-l);font-weight:700;">flexible terms</span></div>
           </div>
         </div>
@@ -811,7 +813,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <div class="step-ui">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <i data-lucide="check" width="14" height="14" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"></i>
             </div>
             <div>
               <div style="font-size:13px;font-weight:700;color:var(--text-1);">Loan settled</div>
@@ -834,11 +836,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <div class="testi-grid">
       <div class="testi-card reveal d1">
         <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
         </div>
         <div class="testi-qm">"</div>
         <p class="testi-body">Just finished my refinance with Providence Finance Hub for my home loan. They got us the best offer. The team always listens to your needs and any questions you have. The whole process went easy and smooth. They went beyond our expectations. Highly recommend for their excellent and transparent services.</p>
@@ -849,11 +851,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
       </div>
       <div class="testi-card reveal d2">
         <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
         </div>
         <div class="testi-qm">"</div>
         <p class="testi-body">Recently had the pleasure of working with Providence Finance Hub for a business loan. The process was remarkably fast and the team provided exceptional service. Their insightful financial advice helped me make informed decisions, and they ensured the loan was secured promptly.</p>
@@ -864,11 +866,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
       </div>
       <div class="testi-card reveal d3">
         <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-          <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+          <i data-lucide="star" class="testi-star" fill="currentColor"></i>
         </div>
         <div class="testi-qm">"</div>
         <p class="testi-body">Thank you so much for your time and huge effort from you and the Providence Finance Hub team. I am truly amazed and grateful to have been able to get the best possible option. I am thankful for the connection that brought us to you. Just another big THANK YOU!</p>
@@ -883,11 +885,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
       <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;">
         <div>
           <div class="testi-stars" style="margin-bottom:12px;">
-            <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg class="testi-star" viewBox="0 0 14 14" fill="currentColor"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
+            <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+            <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+            <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+            <i data-lucide="star" class="testi-star" fill="currentColor"></i>
+            <i data-lucide="star" class="testi-star" fill="currentColor"></i>
           </div>
           <p class="testi-body" style="margin-bottom:16px;">"Providence Finance Hub facilitated our second property mortgage seamlessly. Their expertise and personalised service made the process stress-free. From initial consultation to finalising terms, they demonstrated exceptional knowledge and dedication. Communication was prompt and clear, ensuring we were informed at every step. Their commitment to finding the best financial solution tailored to our needs was evident throughout. They surpassed our expectations."</p>
           <div class="testi-foot">
@@ -898,11 +900,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
         <div style="text-align:center;flex-shrink:0;padding:24px;background:rgba(99,91,255,0.07);border-radius:16px;border:1px solid rgba(99,91,255,0.15);">
           <div style="font-family:var(--f-display);font-size:48px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">5.0</div>
           <div style="display:flex;gap:2px;justify-content:center;margin:6px 0;">
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="#F59E0B"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="#F59E0B"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="#F59E0B"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="#F59E0B"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="#F59E0B"><polygon points="7,1 8.8,5.5 13.5,5.5 9.8,8.5 11.2,13 7,10.2 2.8,13 4.2,8.5 0.5,5.5 5.2,5.5"/></svg>
+            <i data-lucide="star" width="12" height="12" fill="#F59E0B"></i>
+            <i data-lucide="star" width="12" height="12" fill="#F59E0B"></i>
+            <i data-lucide="star" width="12" height="12" fill="#F59E0B"></i>
+            <i data-lucide="star" width="12" height="12" fill="#F59E0B"></i>
+            <i data-lucide="star" width="12" height="12" fill="#F59E0B"></i>
           </div>
           <div style="font-size:11px;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Client rating</div>
         </div>
@@ -923,28 +925,28 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <div class="concerns-grid reveal">
       <div class="concern-card">
         <div class="concern-ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="1.8" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+          <i data-lucide="briefcase" width="22" height="22" fill="none" stroke="var(--purple-l)" stroke-width="1.8" stroke-linecap="round"></i>
         </div>
         <div class="concern-q">"I'm self-employed — banks always knock me back."</div>
         <p class="concern-a">Self-employed applications are our specialty. We know exactly how to present irregular income to the right lenders — and which lenders to avoid.</p>
       </div>
       <div class="concern-card">
         <div class="concern-ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <i data-lucide="circle-alert" width="22" height="22" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"></i>
         </div>
         <div class="concern-q">"My credit history isn't perfect."</div>
         <p class="concern-a">A blemish on your credit file isn't necessarily a dealbreaker. We assess the full picture and match you with lenders suited to your actual situation.</p>
       </div>
       <div class="concern-card">
         <div class="concern-ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <i data-lucide="message-square" width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round"></i>
         </div>
         <div class="concern-q">"I don't understand finance — I'm afraid of making the wrong call."</div>
         <p class="concern-a">We explain everything in plain language. No jargon, no pressure. You'll understand exactly what you're signing and why it's right for you before anything moves forward.</p>
       </div>
       <div class="concern-card">
         <div class="concern-ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          <i data-lucide="refresh-cw" width="22" height="22" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round"></i>
         </div>
         <div class="concern-q">"I've been rejected before and don't want to waste my time again."</div>
         <p class="concern-a">We won't send your application somewhere it'll fail. We assess lender fit before a single form is submitted — protecting your credit file and your time.</p>
@@ -966,11 +968,11 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
     <p class="cta-p">A phone or video call is all it takes. Our team will review your situation, answer your questions, and often have a quote ready on the spot — at no cost and no obligation.</p>
     <div class="cta-contact-row">
       <div class="cta-contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <i data-lucide="phone" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
         <a href="tel:1300776433">1300 776 433</a>
       </div>
       <div class="cta-contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <i data-lucide="mail" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
         <a href="mailto:info@providencefinancehub.com.au">info@providencefinancehub.com.au</a>
       </div>
     </div>
@@ -1031,7 +1033,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
       <div id="chat-input-row" class="chat-input-row" style="display:none;">
         <input id="chat-input" type="text" class="chat-input f-inp" placeholder="Type your answer…" autocomplete="off">
         <button id="chat-send" class="chat-send-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <i data-lucide="send" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>
         </button>
       </div>
       <div id="chat-err" class="f-err" style="display:none;"></div>
@@ -1040,6 +1042,7 @@ img.testi-av{object-fit:cover;border:2px solid var(--border-b);}
 </div>
 
 <script>
+lucide.createIcons();
 const navEl=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
   navEl.classList.toggle('scrolled',window.scrollY>20);
@@ -1362,21 +1365,29 @@ function finalizeLead(){
 
 function showQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
-  w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 14 11 20 23 8"/></svg>'
+  w.innerHTML='<i data-lucide="check" style="display:block;margin:0 auto 14px" width="28" height="28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>'
     +'<p style="font-size:14px;color:var(--text-2);margin-bottom:4px">Thanks, <strong style="color:var(--text-1)">'+(capturedData.name||'there')+'</strong>! Our team will be in touch at <strong style="color:var(--text-1)">'+capturedData.phone+'</strong> very soon.</p>'
     +'<a href="'+BOOKING_URL+'" target="_blank" rel="noopener" class="chat-book-btn">Book a time with our team →</a>'
     +'<p class="f-note" style="margin-top:10px">Or call us on <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>';
   $msgs().appendChild(w);scrollMsgs();
+  lucide.createIcons();
+  fireConfetti();
 }
 
 function showNotQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
-  w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--purple-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+  w.innerHTML='<i data-lucide="check" style="display:block;margin:0 auto 14px" width="28" height="28" fill="none" stroke="var(--purple-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>'
     +'<p style="font-size:15px;font-weight:700;color:var(--text-1);margin-bottom:6px">We\'ve got your details, '+(capturedData.name||'there')+'!</p>'
     +'<p style="font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:16px">Our team will personally review your situation and get back to you within <strong style="color:var(--text-1)">1–2 business days</strong>. Things change — and we may still be able to help.</p>'
     +'<p class="f-note">Questions in the meantime? Call <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>'
     +'<button class="ok-close" style="display:block;width:100%;margin-top:16px" onclick="closeModal()">Close</button>';
   $msgs().appendChild(w);scrollMsgs();
+  lucide.createIcons();
+}
+
+function fireConfetti(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  confetti({particleCount:90,spread:75,origin:{y:0.6},colors:['#635BFF','#00D4FF','#00C9A7']});
 }
 
 function initChat(){

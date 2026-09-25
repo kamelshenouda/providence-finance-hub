@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="vendor/lucide.min.js"></script>
+<script src="vendor/canvas-confetti.min.js"></script>
 <style>
 :root {
   --f-display:'Sora',sans-serif;
@@ -324,8 +326,8 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
   </button>
   <div class="nav-right">
     <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <i data-lucide="moon" class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
+      <i data-lucide="sun" class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
     </button>
     <a href="#" class="btn-nav" onclick="openModal(event)">Book a Call →</a>
   </div>
@@ -338,8 +340,8 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
   <a href="about.html" class="nav-mobile-link active">About</a>
   <div style="display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" style="flex-shrink:0;">
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <i data-lucide="moon" class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
+    <i data-lucide="sun" class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></i>
   </button>
   <a href="#" class="btn-nav" onclick="openModal(event)" style="flex:1;text-align:center;">Book a Call →</a>
 </div>
@@ -376,13 +378,13 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
         <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
           <a href="tel:0280443312" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-2);text-decoration:none;">
             <div style="width:32px;height:32px;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <i data-lucide="phone" width="13" height="13" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"></i>
             </div>
             02 8044 3312
           </a>
           <a href="mailto:info@providencefinancehub.com.au" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-2);text-decoration:none;">
             <div style="width:32px;height:32px;background:rgba(99,91,255,0.1);border:1px solid rgba(99,91,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <i data-lucide="mail" width="13" height="13" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"></i>
             </div>
             info@providencefinancehub.com.au
           </a>
@@ -461,19 +463,19 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
       </div>
       <div class="broker-features">
         <div class="broker-feat">
-          <div class="broker-feat-ico" style="background:rgba(99,91,255,0.12);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="broker-feat-ico" style="background:rgba(99,91,255,0.12);"><i data-lucide="search" width="16" height="16" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"></i></div>
           <div><div class="broker-feat-title">Access to more lenders</div><div class="broker-feat-desc">We search across a vast network — not just the four major banks.</div></div>
         </div>
         <div class="broker-feat">
-          <div class="broker-feat-ico" style="background:rgba(0,212,255,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="broker-feat-ico" style="background:rgba(0,212,255,0.1);"><i data-lucide="shield" width="16" height="16" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"></i></div>
           <div><div class="broker-feat-title">We advocate for you</div><div class="broker-feat-desc">Your interests always come first — not the lender's.</div></div>
         </div>
         <div class="broker-feat">
-          <div class="broker-feat-ico" style="background:rgba(0,201,167,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="broker-feat-ico" style="background:rgba(0,201,167,0.1);"><i data-lucide="activity" width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"></i></div>
           <div><div class="broker-feat-title">Tailored to your situation</div><div class="broker-feat-desc">Every client is different. We structure solutions around your goals.</div></div>
         </div>
         <div class="broker-feat">
-          <div class="broker-feat-ico" style="background:rgba(33,197,93,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="broker-feat-ico" style="background:rgba(33,197,93,0.1);"><i data-lucide="check" width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"></i></div>
           <div><div class="broker-feat-title">End-to-end management</div><div class="broker-feat-desc">From first call to settlement — we handle the entire process.</div></div>
         </div>
       </div>
@@ -500,22 +502,22 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
           </tr>
         </thead>
         <tbody>
-          <tr><td class="feat-col">Offers you different options</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Unlimited access to mortgage, business and development funders</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Wide range of banking experience in Commercial, Property and Mortgages under one umbrella</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Management of the application process from start to finish</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Liaise with your solicitor or conveyancer</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Review your interest rate every six months</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Home price monitoring so you know when equity is available</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Digital applications with SMS updates</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">FREE Buyer Support Services to help you find the right residential or commercial property</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
-          <tr><td class="feat-col">Frequent touch-point contacts after settlement to ensure all is ok</td><td><span class="ico-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="ico-maybe"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></td><td class="pfh-col"><span class="ico-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td class="feat-col">Offers you different options</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Unlimited access to mortgage, business and development funders</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Wide range of banking experience in Commercial, Property and Mortgages under one umbrella</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Management of the application process from start to finish</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Liaise with your solicitor or conveyancer</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Review your interest rate every six months</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Home price monitoring so you know when equity is available</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Digital applications with SMS updates</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">FREE Buyer Support Services to help you find the right residential or commercial property</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
+          <tr><td class="feat-col">Frequent touch-point contacts after settlement to ensure all is ok</td><td><span class="ico-no"><i data-lucide="x" width="13" height="13" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span></td><td><span class="ico-maybe"><i data-lucide="circle-help" width="13" height="13" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span></td><td class="pfh-col"><span class="ico-yes"><i data-lucide="check" width="13" height="13" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span></td></tr>
         </tbody>
       </table>
       <div style="display:flex;gap:24px;margin-top:20px;justify-content:flex-end;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-yes" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Yes</div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-maybe" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Sometimes</div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-no" style="width:20px;height:20px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>No</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-yes" style="width:20px;height:20px;"><i data-lucide="check" width="10" height="10" fill="none" stroke="#21C55D" stroke-width="2.5" stroke-linecap="round"></i></span>Yes</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-maybe" style="width:20px;height:20px;"><i data-lucide="circle-help" width="10" height="10" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"></i></span>Sometimes</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);font-weight:600;"><span class="ico-no" style="width:20px;height:20px;"><i data-lucide="x" width="10" height="10" fill="none" stroke="#FF7858" stroke-width="2.5" stroke-linecap="round"></i></span>No</div>
       </div>
     </div>
   </div>
@@ -534,22 +536,22 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
-          <div style="width:36px;height:36px;background:rgba(99,91,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div style="width:36px;height:36px;background:rgba(99,91,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i data-lucide="book-open" width="16" height="16" fill="none" stroke="var(--purple-l)" stroke-width="2" stroke-linecap="round"></i></div>
           <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Education &amp; Resources</div>
           <div style="font-size:12px;color:var(--text-3);line-height:1.5;">Insightful guidance to help you make confident financial decisions.</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
-          <div style="width:36px;height:36px;background:rgba(0,212,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div style="width:36px;height:36px;background:rgba(0,212,255,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i data-lucide="users" width="16" height="16" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"></i></div>
           <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Long-term Partnership</div>
           <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We stay in touch after settlement — you're never just a transaction.</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
-          <div style="width:36px;height:36px;background:rgba(0,201,167,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div style="width:36px;height:36px;background:rgba(0,201,167,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i data-lucide="trending-up" width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"></i></div>
           <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Rate Reviews Every 6 Months</div>
           <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We proactively check your rate so you're always on the best deal.</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px;">
-          <div style="width:36px;height:36px;background:rgba(33,197,93,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div style="width:36px;height:36px;background:rgba(33,197,93,0.1);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i data-lucide="home" width="16" height="16" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"></i></div>
           <div style="font-size:13px;font-weight:700;color:var(--text-1);margin-bottom:4px;">Equity Monitoring</div>
           <div style="font-size:12px;color:var(--text-3);line-height:1.5;">We track your home value so you know when new opportunities arise.</div>
         </div>
@@ -607,7 +609,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
       <div id="chat-input-row" class="chat-input-row" style="display:none;">
         <input id="chat-input" type="text" class="chat-input f-inp" placeholder="Type your answer…" autocomplete="off">
         <button id="chat-send" class="chat-send-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <i data-lucide="send" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>
         </button>
       </div>
       <div id="chat-err" class="f-err" style="display:none;"></div>
@@ -616,6 +618,7 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);
 </div>
 
 <script>
+lucide.createIcons();
 const navEl=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
   navEl.classList.toggle('scrolled',window.scrollY>20);
@@ -906,21 +909,29 @@ function finalizeLead(){
 
 function showQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
-  w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 14 11 20 23 8"/></svg>'
+  w.innerHTML='<i data-lucide="check" style="display:block;margin:0 auto 14px" width="28" height="28" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>'
     +'<p style="font-size:14px;color:var(--text-2);margin-bottom:4px">Thanks, <strong style="color:var(--text-1)">'+(capturedData.name||'there')+'</strong>! Our team will be in touch at <strong style="color:var(--text-1)">'+capturedData.phone+'</strong> very soon.</p>'
     +'<a href="'+BOOKING_URL+'" target="_blank" rel="noopener" class="chat-book-btn">Book a time with our team →</a>'
     +'<p class="f-note" style="margin-top:10px">Or call us on <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>';
   $msgs().appendChild(w);scrollMsgs();
+  lucide.createIcons();
+  fireConfetti();
 }
 
 function showNotQualifiedResult(){
   const w=document.createElement('div');w.style.cssText='text-align:center;padding:16px 0 4px';
-  w.innerHTML='<svg style="display:block;margin:0 auto 14px" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--purple-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+  w.innerHTML='<i data-lucide="check" style="display:block;margin:0 auto 14px" width="28" height="28" fill="none" stroke="var(--purple-l)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></i>'
     +'<p style="font-size:15px;font-weight:700;color:var(--text-1);margin-bottom:6px">We\'ve got your details, '+(capturedData.name||'there')+'!</p>'
     +'<p style="font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:16px">Our team will personally review your situation and get back to you within <strong style="color:var(--text-1)">1–2 business days</strong>. Things change — and we may still be able to help.</p>'
     +'<p class="f-note">Questions in the meantime? Call <a href="tel:1300776433" style="color:var(--purple-l);font-weight:700;text-decoration:none">1300 776 433</a></p>'
     +'<button class="ok-close" style="display:block;width:100%;margin-top:16px" onclick="closeModal()">Close</button>';
   $msgs().appendChild(w);scrollMsgs();
+  lucide.createIcons();
+}
+
+function fireConfetti(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  confetti({particleCount:90,spread:75,origin:{y:0.6},colors:['#635BFF','#00D4FF','#00C9A7']});
 }
 
 function initChat(){
